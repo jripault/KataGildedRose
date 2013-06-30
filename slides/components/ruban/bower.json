@@ -1,0 +1,31 @@
+{
+  "name": "ruban",
+  "author": {
+    "name": "Loïc Frering",
+    "email": "loic.frering@gmail.com"
+  },
+  "version": "0.2.1",
+  "main": "index.html",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "components"
+  ],
+  "dependencies": {
+    "jquery": "~2.0.0",
+    "keymaster": "latest",
+    "hammerjs": "~1.0.3",
+    "normalize-css": "~2.1.0",
+    "font-awesome": "~3.1.0",
+    "highlightjs": "~7.3.0"
+  },
+  "gitHead": "eca8566e879825559ae996cc6186bcc330099e7b",
+  "readme": "Ruban\r\n=====\r\n\r\nA simple framework for building nice HTML5 based presentations.\r\n\r\nDocumentation\r\n-------------\r\n\r\nYou'll find the documentation on a Ruban: http://loicfrering.github.io/ruban/.\r\n\r\nChangelog\r\n---------\r\n\r\n### 0.2.1\r\n\r\n* Improve and fix navigation with gestures on mobile devices.\r\n* Fix an issue with resizing on Webkit.\r\n\r\n### 0.2.0\r\n\r\n* Move css and js files from dist/ to css/ and js/ directories.\r\n* Do not generate the Table of Content's title.\r\n* Add a quickstart distribution.\r\n* Fix some resizing issues.\r\n* Improve the documentation.\r\n\r\n### 0.1.2\r\n\r\n* Table of Contents automatic generation.\r\n* StyleSheet dedicated to print media.\r\n* Support adding extra details in <detail> tags.\r\n\r\n### 0.1.1\r\n\r\n* Support pagination.\r\n* Fix a resizing issue.\r\n\r\n### 0.1.0\r\n\r\n* Initial release.\r\n\r\nLicense\r\n-------\r\n\r\nCopyright (c) 2013 [Loïc Frering](https://github.com/loicfrering), licensed\r\nunder the MIT license. See the LICENSE file for more informations.\r\n",
+  "readmeFilename": "README.md",
+  "_id": "ruban@0.2.1",
+  "description": "Ruban\r =====",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/loicfrering/ruban"
+  }
+}

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Ruban</title>
+    <meta charset="utf-8"/>
+    <link rel="stylesheet" href="components/normalize-css/normalize.css"/>
+    <link rel="stylesheet" href="components/font-awesome/build/assets/font-awesome/css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="components/highlightjs/styles/tomorrow.css"/>
+    <link rel="stylesheet" href="css/ruban.min.css"/>
+    <link rel="stylesheet" href="css/ruban-print.min.css" media="print"/>
+    <style>
+        section {
+            border-left: 1em solid #434343;
+            border-right: 1em solid #434343;
+        }
+
+        .pagination {
+            right: 2.6em;
+        }
+
+        pre code {
+            background-color: inherit;
+        }
+
+        pre .xml .javascript {
+            opacity: 1;
+        }
+
+        ul .items {
+            list-style: circle;
+        }
+
+        li {
+            padding-left: 1em;
+            font-size: 30px;
+        }
+    </style>
+</head>
+
+<body>
+<section id="ruban">
+    <h1>Coding Dojo</h1>
+
+</section>
+<section id="table-of-contents" class="toc">
+    <h1>Organisation</h1>
+</section>
+<section id="installation">
+    <h1><i class="icon-download"></i> Installation</h1>
+    <ul>
+        <li>Environnement</li>
+        <li>Code</li>
+        <li>Tests</li>
+    </ul>
+</section>
+<section id="rules">
+    <h1>Les règles du Kata</h1>
+
+    <h4>Vous tenez un magasin d'items</h4>
+    <ul class="items">
+        <li>Tous les items ont une valeur de sellIn qui défini le nombre de jours pour vendre l'objet</li>
+        <li>Chaque item a une valuer de qualité qui donne sa valeur</li>
+        <li>A la fin de chaque jour, le système doit baisser ces deux valeurs</li>
+    </ul>
+</section>
+<section id="more-rules">
+    <h1>Encore des règles</h1>
+
+    <ul class="items">
+        <li>Quand le sellIn est passé, la qualité se degrade deux fois plus vite</li>
+        <li>La qualité d'un item ne peut pas être négative</li>
+        <li>"Aged Brie" est un item qui a sa qualité qui augmente quand il vieillit</li>
+        <li> La qualité d'un item ne peut pas dépasser 50</li>
+        <li>"Sulfuras", étant un item légendaire, ne peut être vendu ni ne perd en qualité</li>
+        <li>"Backstage passes", comme aged brie, augemente en qualité quand sa valeur de sellIn approche;
+            La qualité augmente de 2 quand il y a 10 jours ou moins, et augmente de 3 quand il y a 5 jours ou moins. Par
+            contre elle tombe à 0 quand la date est passée
+        </li>
+        <li>Vous venez de trouver un nouveau fournisseur d'item maudit. Il faut donc mettre à jour le système pour
+            prendre cela en compte :
+            les items maudits voient leur qualité baisser deux fois plus vite que les items normaux
+        </li>
+    </ul>
+
+
+</section>
+
+<script src="components/jquery/jquery.min.js"></script>
+<script src="components/keymaster/keymaster.min.js"></script>
+<script src="components/hammerjs/dist/hammer.min.js"></script>
+<script src="components/highlightjs/highlight.pack.js"></script>
+<script src="js/ruban.min.js"></script>
+<script>
+
+
+    var ruban = new Ruban({
+        pagination: true
+    });
+</script>
+</body>
+</html>

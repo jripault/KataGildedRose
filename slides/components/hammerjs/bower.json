@@ -1,0 +1,16 @@
+{
+  "name": "hammerjs",
+  "version": "1.0.5",
+  "main": [
+    "dist/jquery.hammer.js"
+  ],
+  "gitHead": "12bf2cf914c25aee3f6bb1cd868d4002a66f3e1d",
+  "readme": "# Hammer.js [![Build Status](https://travis-ci.org/EightMedia/hammer.js.png)](https://travis-ci.org/EightMedia/hammer.js/)\r\n\r\n### A javascript library for multi-touch gestures\r\n\r\n> I told you, homeboy /\r\n> You *CAN* touch this /\r\n> Yeah, that's how we living and you know /\r\n> You *CAN* touch this\r\n\r\n\r\n## Features\r\n- Detects Tap, DoubleTap, Swipe, Drag, Pinch, and Rotate gestures\r\n- DOM Events\r\n- Debug plugins\r\n- Custom gestures\r\n- Chainable instance methods\r\n- jQuery plugin with events delegation (the on/off methods) available\r\n- IE8 and older compatibility with jQuery plugin\r\n- AMD support (RequireJS)\r\n- Unit tests\r\n- Option to disable mouse support, so only for touch and pen input.\r\n\r\n\r\n## Getting Started\r\nSee the [Wiki on GitHub](https://github.com/EightMedia/hammer.js/wiki) for documentation.\r\n\r\n\r\n## Contributing\r\nIn lieu of a formal styleguide, take care to maintain the existing coding style.\r\nAdd unit tests for any new or changed functionality. Lint and test your code using grunt.\r\nPlease don't commit the dist versions with your changes, only the changed source files.\r\n\r\n\r\n## Further notes\r\nCreated by [Jorik Tangelder](http://twitter.com/jorikdelaporik) and developed at [Eight Media](http://www.eight.nl/) in Arnhem, the Netherlands.\r\n\r\nIt's recommend to listen to [this loop](http://soundcloud.com/eightmedia/hammerhammerhammer) while using hammer.js.\r\n",
+  "readmeFilename": "README.md",
+  "_id": "hammerjs@1.0.5",
+  "description": "> I told you, homeboy /\r > You *CAN* touch this /\r > Yeah, that's how we living and you know /\r > You *CAN* touch this",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/EightMedia/hammer.js.git"
+  }
+}
