@@ -33,7 +33,22 @@
         li {
             padding-left: 1em;
             font-size: 30px;
+            padding-bottom: 10px;
         }
+
+        a{
+            text-decoration:underline;
+        }
+
+        .strike{
+            text-decoration: line-through;
+            padding-left: 70px;
+        }
+
+        .subSection {
+            padding-left: 70px;
+        }
+
     </style>
 </head>
 
@@ -45,25 +60,54 @@
     <h1>Coding Dojo ?</h1>
     <ul class="steps">
         <li>C'est quoi ?</li> <!-- Dojo : lieu d'apprentissage des arts martiaux - Kata : forme d'entrainement, répétition d'un exercice -->
-        <li>Pour quoi faire ?</li> <!-- l'ojectif premier est d'apprendre et non pas de terminer l'excercice -->
+        <li class="subSection">Lieu d'apprentissage</li>
+        <li>Pour quoi faire ?</li> <!-- l'objectif premier est d'apprendre et non pas de terminer l'excercice -->
+        <li class="strike">Terminer l'exercice</li>
+        <li class="subSection">APPRENDRE !</li>
         <li>Terrain d'entrainement</li> <!-- Safe (no prod), error is ok, favoriser l'échange -->
+        <li class="strike">Code de prod</li>
+        <li class="subSection">Error is ok</li>
     </ul>
 </section>
 <section id="table-of-contents">
     <h1>Organisation</h1>
     <ul class="steps">
         <li>Pair Programming</li>
-        <li>TDD</li><!-- cas particulier avec le legacy -->
-        <li>Iteration / Retro</li>
-        <li>Sujet: Legacy</li>
+        <li>TDD:
+            <ul>
+                <li style="color: red">Red</li>
+                <li style="color: #008000">Green</li>
+                <li>Refactor</li>
+            </ul>
+        </li><!-- cas particulier avec le legacy -->
+        <li>Iteration / Retro
+            <ul>
+                <li>Une itération de tests (25min.)</li>
+                <li>Rétro. (10min.)</li>
+                <li>Itération Refactoring (25min.)</li>
+                <li>Rétro. (10min.)</li>
+                <li>Itération Refactoring (20min.)</li>
+                <li>Rétro. & Conclusion (20min.)</li>
+            </ul>
+        </li>
+
+        <li>Sujet : Refactoring sur du code Legacy</li>
+        <li>Un exercice facile à appréhender, plusieurs solutions possibles</li>
     </ul>
 </section>
 <section id="installation">
     <h1><i class="icon-download"></i> Installation</h1>
     <ul>
-        <li>Environnement</li>
-        <li>Code</li>
-        <li>Tests</li>
+        <li>Environnement : Ton Eclipse ...</li>
+        <li><a href="https://github.com/jripault/KataGildedRose">Code</a></li>
+        <li>Tests
+            <ul>
+                <li>JUnit</li>
+                <li>FestAssert</li>
+                <li><a href="http://www.eclemma.org/">Jacoco</a></li>
+                <li><a href="http://infinitest.github.io/">InfiniTest</a></li>
+            </ul>
+        </li>
     </ul>
 </section>
 <section id="rules">
@@ -71,36 +115,80 @@
 
     <h4>Vous tenez un magasin d'items</h4>
     <ul class="items">
-        <li>Tous les items ont une valeur de sellIn qui défini le nombre de jours pour vendre l'objet</li>
-        <li>Chaque item a une valuer de qualité qui donne sa valeur</li>
+        <li>Tous les items ont une date de péremption (sellIn) qui défini le nombre de jours restants pour vendre l'objet</li>
+        <li>Chaque item a une valeur de qualité qui indique son prix</li>
         <li>A la fin de chaque jour, le système doit baisser ces deux valeurs</li>
     </ul>
 </section>
 <section id="more-rules">
     <h1>Encore des règles</h1>
-
     <ul class="items">
-        <li>Quand le sellIn est passé, la qualité se degrade deux fois plus vite</li>
+        <li>Quand la date de péremption est passée, la qualité se degrade deux fois plus vite</li>
         <li>La qualité d'un item ne peut pas être négative</li>
-        <li>"Aged Brie" est un item qui a sa qualité qui augmente quand il vieillit</li>
         <li> La qualité d'un item ne peut pas dépasser 50</li>
-        <li>"Sulfuras", étant un item légendaire, ne peut être vendu ni ne perd en qualité</li>
+        <li>Pour le "Aged Brie": Contrairement aux autres items, plus le temps passe plus sa qualité augmente</li>
+        <li>"Sulfuras" étant un item légendaire, n'a pas de date de péremption et ne perd pas en qualité</li>
     </ul>
-
-
 </section>
 <section id="more-rules2">
-    <ul class="items">
-        <li>"Backstage passes", comme aged brie, augemente en qualité quand sa valeur de sellIn approche;
-            La qualité augmente de 2 quand il y a 10 jours ou moins, et augmente de 3 quand il y a 5 jours ou moins. Par
-            contre elle tombe à 0 quand la date est passée
+    <h1>Encore des règles</h1>
+    <ul class="steps">
+        <li>"Backstage passes", comme "aged brie", augmente en qualité quand sa valeur de péremption approche;
+            La qualité augmente de 2 quand il reste 10 jours ou moins, et augmente de 3 quand il reste 5 jours ou moins. Par
+            contre elle tombe à 0 quand la date est passée.<br/>
+        </li>
+        <li><strong>Demande d'évolution:</strong><br/>Vous venez de trouver un nouveau fournisseur d'item maudits: il fournit les mêmes items mais leur qualité baisse deux fois plus vite.
+            Il faut donc mettre à jour le système pour prendre cela en compte.
         </li>
     </ul>
+</section>
+<section id="first-steps">
+    <h1>First steps</h1>
     <ul class="steps">
-        <li><strong>Demande d'évolution:</strong><br/>Vous venez de trouver un nouveau fournisseur d'item maudit. Il faut donc mettre à jour le système pour
-            prendre cela en compte :
-            les items maudits voient leur qualité baisser deux fois plus vite que les items normaux
-        </li>
+        <li>Implémenter les tests</li>
+        <li>Les tests c'est pour ceux qui ne savent pas coder: <img src="components/img/JDC-Tests.gif"></li>
+    </ul>
+</section>
+<section id="iteration1">
+    <h1>A vos marques, Prêts ? Testez !</h1>
+</section>
+<section id="Retro1">
+    <h1>Retrospective</h1>
+    <ul class="steps">
+        <li>Difficultés rencontrées</li>
+        <li>Couverture</li>
+        <li>Tester != coder</li>
+    </ul>
+</section>
+<section id="iteration2">
+    <h1>A vos marques, Prêts ? Refactorez !</h1>
+</section>
+<section id="refactor-hints">
+    <h1>Refactor hints</h1>
+    <ul class="steps">
+        <li>Dupliquer le code pour mieux refactorer: débusquer la duplication</li>
+        <li>Extract, extract, extract</li>
+    </ul>
+</section>
+<section id="iteration3">
+    <h1>Un dernier pour la route</h1>
+</section>
+<section id="retroExo">
+    <h1>Retro de l'exercice</h1>
+    <ul class="steps">
+        <li>Tour de table: avancement, solutions, difficultés, ressenti</li>
+        <li>1 exercice: 5 solutions différentes</li><!-- différentes approches, jusqu'ou va-ton dans le refactor -->
+        <li>Pair programming ?</li>
+        <li>Toujours peur du legacy ?</li>
+    </ul>
+</section>
+<section id="retroDojo">
+    <h1>Retro du dojo</h1>
+    <ul class="steps">
+        <li>What went well ?</li>
+        <li>What could be improved ?</li>
+        <li>Actions</li>
+        <li>ROTI</li>
     </ul>
 </section>
 

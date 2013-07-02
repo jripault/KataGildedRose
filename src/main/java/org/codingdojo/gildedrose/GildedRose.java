@@ -1,5 +1,7 @@
 package org.codingdojo.gildedrose;
 
+import org.codingdojo.gildedrose.model.Item;
+
 class GildedRose {
     Item[] items;
 

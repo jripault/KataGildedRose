@@ -24,5 +24,46 @@
             <version>4.11</version>
         </dependency>
 
+
     </dependencies>
+    <build>
+        <plugins>
+            <!--plugin>
+                <groupId>org.easytesting</groupId>
+                <artifactId>maven-fest-assertion-generator-plugin</artifactId>
+                <version>1.0</version>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>generate-assertions</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <configuration>
+                    <packages>
+                        <param>org.codingdojo.gildedrose.model</param>
+                    </packages>
+                </configuration>
+            </plugin-->
+            <plugin>
+                <groupId>org.jacoco</groupId>
+                <artifactId>jacoco-maven-plugin</artifactId>
+                <version>0.5.8.201207111220</version>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>prepare-agent</goal>
+                        </goals>
+                    </execution>
+                    <execution>
+                        <id>report</id>
+                        <phase>test</phase>
+                        <goals>
+                            <goal>report</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
 </project>
