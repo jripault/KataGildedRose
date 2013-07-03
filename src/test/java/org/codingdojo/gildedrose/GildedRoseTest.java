@@ -45,7 +45,7 @@ public class GildedRoseTest {
     }
 
     @Test
-    public void defaultItemShouldNotHaveQualityMoreThanFifty() {
+    public void itemShouldNotHaveQualityMoreThanFifty() {
 
     }
 
