@@ -2,6 +2,8 @@ package org.codingdojo.gildedrose;
 
 import org.codingdojo.gildedrose.model.Item;
 
+import java.util.Arrays;
+
 class GildedRose {
     Item[] items;
 
@@ -60,5 +62,10 @@ class GildedRose {
                 }
             }
         }
+    }
+
+    @Override
+    public String toString() {
+        return Arrays.toString(items);
     }
 }

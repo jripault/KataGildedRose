@@ -34,4 +34,8 @@ public class Item {
 
 		this.quality = quality;
 	}
+
+    public String toString() {
+        return "(name:" + this.name + ", sellIn:" + this.sellIn + ", quality:" + this.quality + ")";
+    }
 }
