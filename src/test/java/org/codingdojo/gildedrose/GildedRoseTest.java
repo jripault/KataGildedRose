@@ -19,9 +19,13 @@ import static org.fest.assertions.api.Assertions.*;
 public class GildedRoseTest {
 
     @Test
-    //exemple
+    //example
     public void unTest() {
-        Item item = anItem().withName("test").withQuality(12).withSellIn(13).build();
+    	//Given
+    	Item item;
+        //When
+		item = anItem().withName("test").withQuality(12).withSellIn(13).build();
+        //Then
         assertThat(item).hasQuality(12).hasSellIn(13);
     }
 
