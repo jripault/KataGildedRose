@@ -3,7 +3,6 @@ package org.codingdojo.gildedrose.model;
 import static java.lang.String.format;
 
 import org.fest.assertions.api.AbstractAssert;
-import org.fest.assertions.api.Assertions;
 
 
 /**
