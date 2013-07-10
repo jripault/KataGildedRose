@@ -1,5 +1,6 @@
 package org.codingdojo.gildedrose.builder;
 
+import org.codingdojo.gildedrose.model.BetterItem;
 import org.codingdojo.gildedrose.model.Item;
 
 public class ItemBuilder {
@@ -28,7 +29,7 @@ public class ItemBuilder {
 	}
 
 	public Item build() {
-		return new Item(name, sellIn, quality);
+		return new BetterItem(name, sellIn, quality);
 	}
 
 }

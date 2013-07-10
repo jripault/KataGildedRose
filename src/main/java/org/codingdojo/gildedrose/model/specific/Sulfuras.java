@@ -1,4 +1,6 @@
-package org.codingdojo.gildedrose.model;
+package org.codingdojo.gildedrose.model.specific;
+
+import org.codingdojo.gildedrose.model.BetterItem;
 
 public class Sulfuras extends BetterItem {
 
@@ -10,16 +12,6 @@ public class Sulfuras extends BetterItem {
 
     @Override
     public void passOneDay() {
-        // do nothing
-    }
-
-    @Override
-    public void increaseQuality() {
-        // do nothing
-    }
-
-    @Override
-    public void decreaseQuality() {
         // do nothing
     }
 }
