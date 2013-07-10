@@ -49,6 +49,17 @@
             padding-left: 70px;
         }
 
+        img{
+            width: 25%;
+        }
+
+        .img-centered{
+            width: 80%;
+            display: block;
+            margin-left: auto;
+            margin-right: auto
+        }
+
     </style>
 </head>
 
@@ -80,32 +91,36 @@
                 <li>Refactor</li>
             </ul>
         </li><!-- cas particulier avec le legacy -->
-        <li>Iteration / Retro
+        <li>Baby steps</li> <!-- Write the simplest code that makes the tests pass. -->
+        <li>Sujet : Refactoring sur du code Legacy</li>
+        <li>Un exercice facile à appréhender, plusieurs solutions possibles</li>
+    </ul>
+</section>
+<section id="table-of-contents2">
+    <h1>Planning du dojo</h1>
             <ul>
                 <li>Une itération de tests (25min.)</li>
                 <li>Rétro. (10min.)</li>
                 <li>Itération Refactoring (25min.)</li>
                 <li>Rétro. (10min.)</li>
                 <li>Itération Refactoring (20min.)</li>
+                <li>Rétro. (10min.)</li>
+                <li>Itération Refactoring (20min.)</li>
                 <li>Rétro. & Conclusion (20min.)</li>
             </ul>
-        </li>
-
-        <li>Sujet : Refactoring sur du code Legacy</li>
-        <li>Un exercice facile à appréhender, plusieurs solutions possibles</li>
-    </ul>
 </section>
 <section id="installation">
     <h1><i class="icon-download"></i> Installation</h1>
     <ul>
         <li>Environnement : Ton Eclipse ...</li>
         <li><a href="https://github.com/jripault/KataGildedRose">Code</a></li>
-        <li>Tests
+        <li><a href="http://agile-spirit.fr/blog/tester-en-toute-productivite/">Tests</a>
             <ul>
                 <li>JUnit</li>
                 <li>FestAssert</li>
-                <li><a href="http://www.eclemma.org/">Jacoco</a></li>
+                <li><a href="http://www.eclemma.org/">Eclemma</a></li>
                 <li><a href="http://infinitest.github.io/">InfiniTest</a></li>
+                <li><a href="http://moreunit.sourceforge.net/">MoreUnit</a></li>
             </ul>
         </li>
     </ul>
@@ -137,7 +152,7 @@
             La qualité augmente de 2 quand il reste 10 jours ou moins, et augmente de 3 quand il reste 5 jours ou moins. Par
             contre elle tombe à 0 quand la date est passée.<br/>
         </li>
-        <li><strong>Demande d'évolution:</strong><br/>Vous venez de trouver un nouveau fournisseur d'item maudits: il fournit les mêmes items mais leur qualité baisse deux fois plus vite.
+        <li><strong>Demande d'évolution:</strong><br/>Vous venez de trouver un nouveau fournisseur d'item maudits: il fournit les mêmes items mais ils se dégradent deux fois plus vite.
             Il faut donc mettre à jour le système pour prendre cela en compte.
         </li>
     </ul>
@@ -145,15 +160,17 @@
 <section id="code-rules">
     <h1>Règles sur le code</h1>
     <ul>
-        <li>Pas le droit de toucher à la classe Item</li>
+        <li><strong>Pas le droit de toucher à la classe Item</strong></li>
         <li>Uniquement refactorer la méthode updateQuality de la classe GildedRose</li>
+        <li>Tout le reste est autorisé, soyez imaginatif</li>
     </ul>
 </section>
 <section id="first-steps">
     <h1>First steps</h1>
     <ul class="steps">
         <li>Implémenter les tests</li>
-        <li>Les tests c'est pour ceux qui ne savent pas coder: <img src="components/img/JDC-Tests.gif"></li>
+        <li>Les tests c'est pour ceux qui ne savent pas coder</li>
+        <li><img class="img-centered" src="components/img/JDC-Tests.gif"></li>
     </ul>
 </section>
 <section id="iteration1">
@@ -174,10 +191,14 @@
     <h1>Refactor hints</h1>
     <ul class="steps">
         <li>Dupliquer le code pour mieux refactorer: débusquer la duplication</li>
+        <li>Apprenez à utiliser votre IDE</li>
         <li>Extract, extract, extract</li>
     </ul>
 </section>
 <section id="iteration3">
+    <h1>Et ca refactore encore</h1>
+</section>
+<section id="iteration4">
     <h1>Un dernier pour la route</h1>
 </section>
 <section id="retroExo">
@@ -197,6 +218,13 @@
         <li>Actions</li>
         <li>ROTI</li>
     </ul>
+</section>
+<section id="references">
+    <h1>Références</h1>
+    <a href="http://www.amazon.fr/Test-Driven-Development-By-Example/dp/0321146530"><img src="http://ecx.images-amazon.com/images/I/51K3KXOKrJL._BO2,204,203,200_PIsitb-sticker-arrow-click,TopRight,35,-76_SX385_SY500_CR,0,0,385,500_SH20_OU08_.jpg"/></a>
+    <a href="http://www.amazon.fr/Clean-Code-Handbook-Software-Craftsmanship/dp/0132350882"><img src="http://ecx.images-amazon.com/images/I/41znMZniZ1L._BO2,204,203,200_PIsitb-sticker-arrow-click,TopRight,35,-76_SX385_SY500_CR,0,0,385,500_SH20_OU08_.jpg"/></a>
+    <a href="http://www.amazon.fr/Effective-Java-Joshua-Bloch/dp/0321356683"><img src="http://ecx.images-amazon.com/images/I/51EHjWvpClL._BO2,204,203,200_PIsitb-sticker-arrow-click,TopRight,35,-76_SX385_SY500_CR,0,0,385,500_SH20_OU08_.jpg"/></a>
+    <a href="http://www.amazon.fr/Refactoring-Improving-Design-Existing-Code/dp/0201485672"><img src="http://ecx.images-amazon.com/images/I/41gNhHqNwGL._BO2,204,203,200_PIsitb-sticker-arrow-click,TopRight,35,-76_SX385_SY500_CR,0,0,385,500_SH20_OU08_.jpg"/></a>
 </section>
 
 <script src="components/jquery/jquery.min.js"></script>

@@ -3,6 +3,8 @@ package org.codingdojo.gildedrose;
 import org.codingdojo.gildedrose.model.BetterItem;
 import org.codingdojo.gildedrose.model.Item;
 
+import java.util.Arrays;
+
 class GildedRose {
     private Item[] items;
 
@@ -15,5 +17,10 @@ class GildedRose {
             BetterItem item = (BetterItem) items[i];
             item.passOneDay();
         }
+    }
+
+    @Override
+    public String toString() {
+        return Arrays.toString(items);
     }
 }
