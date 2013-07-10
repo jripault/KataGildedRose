@@ -23,10 +23,13 @@ public class GildedRoseTest {
     public void unTest() {
     	//Given
     	Item item;
+        GildedRose gildedRose;
         //When
 		item = anItem().withName("test").withQuality(12).withSellIn(13).build();
+        gildedRose = new GildedRose(new Item[] { item });
+        gildedRose.updateQuality();
         //Then
-        assertThat(item).hasQuality(12).hasSellIn(13);
+        assertThat(item).hasQuality(11).hasSellIn(12);
     }
 
     /**
