@@ -13,55 +13,143 @@ class GildedRose {
 
     public void updateQuality() {
         for (int i = 0; i < items.length; i++) {
-            if (!items[i].name.equals("Aged Brie")
-                    && !items[i].name.equals("Backstage passes to a TAFKAL80ETC concert")) {
-                if (items[i].quality > 0) {
-                    if (!items[i].name.equals("Sulfuras, Hand of Ragnaros")) {
-                        items[i].quality = items[i].quality - 1;
-                    }
-                }
-            } else {
-                if (items[i].quality < 50) {
-                    items[i].quality = items[i].quality + 1;
+            Item item = items[i];
 
-                    if (items[i].name.equals("Backstage passes to a TAFKAL80ETC concert")) {
-                        if (items[i].sellIn < 11) {
-                            if (items[i].quality < 50) {
-                                items[i].quality = items[i].quality + 1;
-                            }
-                        }
+            Strategy strategy = StrategyBuilder.build(item);
+            strategy.updateItem(item);
+        }
+    }
 
-                        if (items[i].sellIn < 6) {
-                            if (items[i].quality < 50) {
-                                items[i].quality = items[i].quality + 1;
-                            }
-                        }
-                    }
-                }
+    public static class StrategyBuilder{
+        public static Strategy build(Item item){
+
+            Strategy strategy;
+
+            if (isBrie(item)) {
+                strategy = new BrieStrategy();
+            }
+            else if (isSulfuras(item)) {
+                strategy = new SulfurasStrategy();
+            }
+            else if (isConcert(item)) {
+                strategy = new PassesStrategy();
+            }
+            else if (isConjured(item)) {
+                strategy = new ConjuredStrategy();
+            }
+            else{
+                strategy = new DefaultStrategy();
             }
 
-            if (!items[i].name.equals("Sulfuras, Hand of Ragnaros")) {
-                items[i].sellIn = items[i].sellIn - 1;
-            }
+            return strategy;
+        }
+    }
 
-            if (items[i].sellIn < 0) {
-                if (!items[i].name.equals("Aged Brie")) {
-                    if (!items[i].name.equals("Backstage passes to a TAFKAL80ETC concert")) {
-                        if (items[i].quality > 0) {
-                            if (!items[i].name.equals("Sulfuras, Hand of Ragnaros")) {
-                                items[i].quality = items[i].quality - 1;
-                            }
-                        }
-                    } else {
-                        items[i].quality = items[i].quality - items[i].quality;
-                    }
-                } else {
-                    if (items[i].quality < 50) {
-                        items[i].quality = items[i].quality + 1;
-                    }
-                }
+    static class BrieStrategy implements Strategy {
+
+        @Override
+        public void updateItem(Item item) {
+            decreaseSellIn(item);
+            increaseQuality(item);
+            if (isPerimatedeuh(item)) {
+                increaseQuality(item);
             }
         }
+    }
+    static class SulfurasStrategy implements Strategy {
+
+        @Override
+        public void updateItem(Item item) {
+
+        }
+    }
+    static class PassesStrategy implements Strategy {
+
+        @Override
+        public void updateItem(Item item) {
+            decreaseSellIn(item);
+            increaseQualityConcert(item);
+            if (isPerimatedeuh(item)) {
+                item.quality = 0;
+            }
+        }
+    }
+    static class DefaultStrategy implements Strategy{
+
+        @Override
+        public void updateItem(Item item) {
+            decreaseSellIn(item);
+            internalDecreaseQuality(item);
+            if (isPerimatedeuh(item)) {
+                internalDecreaseQuality(item);
+            }
+        }
+    }
+    static class ConjuredStrategy implements Strategy{
+
+        @Override
+        public void updateItem(Item item) {
+            decreaseSellIn(item);
+            internalDecreaseQuality(item);
+            internalDecreaseQuality(item);
+            if (isPerimatedeuh(item)) {
+                internalDecreaseQuality(item);
+                internalDecreaseQuality(item);
+            }
+        }
+    }
+
+    private static void decreaseSellIn(Item item) {
+        item.sellIn = item.sellIn - 1;
+    }
+
+    private static boolean isPerimatedeuh(Item item) {
+        return item.sellIn < 0;
+    }
+
+    private static void increaseQualityConcert(Item item) {
+        increaseQuality(item);
+        if (item.sellIn < 11) {
+            increaseQuality(item);
+        }
+        if (item.sellIn < 6) {
+            increaseQuality(item);
+        }
+    }
+
+    private void decreaseQuality(Item item) {
+        if (item.quality > 0 && !isSulfuras(item)) {
+            internalDecreaseQuality(item);
+            if(isConjured(item)){
+                internalDecreaseQuality(item);
+            }
+        }
+    }
+
+    private static void internalDecreaseQuality(Item item) {
+        if (item.quality > 0)
+            item.quality = item.quality - 1;
+    }
+
+    private static void increaseQuality(Item item) {
+        if (item.quality < 50) {
+            item.quality = item.quality + 1;
+        }
+    }
+
+    private static boolean isSulfuras(Item i) {
+        return "Sulfuras, Hand of Ragnaros".equals(i.name);
+    }
+
+    private static boolean isConcert(Item i) {
+        return "Backstage passes to a TAFKAL80ETC concert".equals(i.name);
+    }
+
+    private static boolean isBrie(Item i) {
+        return "Aged Brie".equals(i.name);
+    }
+    private static boolean isConjured(Item i) {
+        return "Conjured Mana Cake".equals(i.name);
     }
 
     @Override
