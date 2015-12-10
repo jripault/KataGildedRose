@@ -1,9 +1,8 @@
 package org.codingdojo.gildedrose.model;
 
-import static java.lang.String.format;
-
 import org.fest.assertions.api.AbstractAssert;
-import org.fest.assertions.api.Assertions;
+
+import static java.lang.String.format;
 
 
 /**
@@ -11,82 +10,93 @@ import org.fest.assertions.api.Assertions;
  */
 public class ItemAssert extends AbstractAssert<ItemAssert, Item> {
 
-  /**
-   * Creates a new </code>{@link ItemAssert}</code> to make assertions on actual Item.
-   * @param actual the Item we want to make assertions on.
-   */
-  public ItemAssert(Item actual) {
-    super(actual, ItemAssert.class);
-  }
+    /**
+     * Creates a new </code>{@link ItemAssert}</code> to make assertions on actual Item.
+     *
+     * @param actual the Item we want to make assertions on.
+     */
+    public ItemAssert(Item actual) {
+        super(actual, ItemAssert.class);
+    }
 
-  /**
-   * An entry point for ItemAssert to follow Fest standard <code>assertThat()</code> statements.<br>
-   * With a static import, one's can write directly : <code>assertThat(myItem)</code> and get specific assertion with code completion.
-   * @param actual the Item we want to make assertions on.
-   * @return a new </code>{@link ItemAssert}</code>
-   */
-  public static ItemAssert assertThat(Item actual) {
-    return new ItemAssert(actual);
-  }
+    /**
+     * An entry point for ItemAssert to follow Fest standard <code>assertThat()</code> statements.<br>
+     * With a static import, one's can write directly : <code>assertThat(myItem)</code> and get specific assertion with code completion.
+     *
+     * @param actual the Item we want to make assertions on.
+     * @return a new </code>{@link ItemAssert}</code>
+     */
+    public static ItemAssert assertThat(Item actual) {
+        return new ItemAssert(actual);
+    }
 
-  /**
-   * Verifies that the actual Item's name is equal to the given one.
-   * @param name the given name to compare the actual Item's name to.
-   * @return this assertion object.
-   * @throws AssertionError - if the actual Item's name is not equal to the given one.
-   */
-  public ItemAssert hasName(String name) {
-    // check that actual Item we want to make assertions on is not null.
-    isNotNull();
+    /**
+     * Verifies that the actual Item's name is equal to the given one.
+     *
+     * @param name the given name to compare the actual Item's name to.
+     * @return this assertion object.
+     * @throws AssertionError - if the actual Item's name is not equal to the given one.
+     */
+    public ItemAssert hasName(String name) {
+        // check that actual Item we want to make assertions on is not null.
+        isNotNull();
 
-    // we overrides the default error message with a more explicit one
-    String errorMessage = format("Expected Item's name to be <%s> but was <%s>", name, actual.getName());
-    
-    // check
-    if (!actual.getName().equals(name)) { throw new AssertionError(errorMessage); }
+        // we overrides the default error message with a more explicit one
+        String errorMessage = format("Expected Item's name to be <%s> but was <%s>", name, actual.getName());
 
-    // return the current assertion for method chaining
-    return this;
-  }
+        // check
+        if (!actual.getName().equals(name)) {
+            throw new AssertionError(errorMessage);
+        }
 
-  /**
-   * Verifies that the actual Item's quality is equal to the given one.
-   * @param quality the given quality to compare the actual Item's quality to.
-   * @return this assertion object.
-   * @throws AssertionError - if the actual Item's quality is not equal to the given one.
-   */
-  public ItemAssert hasQuality(int quality) {
-    // check that actual Item we want to make assertions on is not null.
-    isNotNull();
+        // return the current assertion for method chaining
+        return this;
+    }
 
-    // we overrides the default error message with a more explicit one
-    String errorMessage = format("Expected Item's quality to be <%s> but was <%s>", quality, actual.getQuality());
-    
-    // check
-    if (actual.getQuality() != quality) { throw new AssertionError(errorMessage); }
+    /**
+     * Verifies that the actual Item's quality is equal to the given one.
+     *
+     * @param quality the given quality to compare the actual Item's quality to.
+     * @return this assertion object.
+     * @throws AssertionError - if the actual Item's quality is not equal to the given one.
+     */
+    public ItemAssert hasQuality(int quality) {
+        // check that actual Item we want to make assertions on is not null.
+        isNotNull();
 
-    // return the current assertion for method chaining
-    return this;
-  }
+        // we overrides the default error message with a more explicit one
+        String errorMessage = format("Expected Item's quality to be <%s> but was <%s>", quality, actual.getQuality());
 
-  /**
-   * Verifies that the actual Item's sellIn is equal to the given one.
-   * @param sellIn the given sellIn to compare the actual Item's sellIn to.
-   * @return this assertion object.
-   * @throws AssertionError - if the actual Item's sellIn is not equal to the given one.
-   */
-  public ItemAssert hasSellIn(int sellIn) {
-    // check that actual Item we want to make assertions on is not null.
-    isNotNull();
+        // check
+        if (actual.getQuality() != quality) {
+            throw new AssertionError(errorMessage);
+        }
 
-    // we overrides the default error message with a more explicit one
-    String errorMessage = format("Expected Item's sellIn to be <%s> but was <%s>", sellIn, actual.getSellIn());
-    
-    // check
-    if (actual.getSellIn() != sellIn) { throw new AssertionError(errorMessage); }
+        // return the current assertion for method chaining
+        return this;
+    }
 
-    // return the current assertion for method chaining
-    return this;
-  }
+    /**
+     * Verifies that the actual Item's sellIn is equal to the given one.
+     *
+     * @param sellIn the given sellIn to compare the actual Item's sellIn to.
+     * @return this assertion object.
+     * @throws AssertionError - if the actual Item's sellIn is not equal to the given one.
+     */
+    public ItemAssert hasSellIn(int sellIn) {
+        // check that actual Item we want to make assertions on is not null.
+        isNotNull();
+
+        // we overrides the default error message with a more explicit one
+        String errorMessage = format("Expected Item's sellIn to be <%s> but was <%s>", sellIn, actual.getSellIn());
+
+        // check
+        if (actual.getSellIn() != sellIn) {
+            throw new AssertionError(errorMessage);
+        }
+
+        // return the current assertion for method chaining
+        return this;
+    }
 
 }
