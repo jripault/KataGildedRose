@@ -5,44 +5,44 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
 
-import static org.codingdojo.gildedrose.model.ItemAssert.*;
 import static org.codingdojo.gildedrose.builder.ItemBuilder.anItem;
-
-import static org.fest.assertions.api.Assertions.*;
+import static org.codingdojo.gildedrose.model.ItemAssert.assertThat;
 
 /**
  * run mvn clean package
  * go to \target\site\jacoco\index.html to consult
  */
-
 @RunWith(JUnit4.class)
 public class GildedRoseTest {
 
     @Test
     //example
     public void unTest() {
-    	//Given
-    	Item item;
+        //Given
+        Item item;
         GildedRose gildedRose;
+
         //When
-		item = anItem().withName("test").withQuality(12).withSellIn(13).build();
-        gildedRose = new GildedRose(new Item[] { item });
+        item = anItem().withName("test").withQuality(12).withSellIn(13).build();
+        gildedRose = new GildedRose(new Item[]{item});
         gildedRose.updateQuality();
+
         //Then
         assertThat(item).hasQuality(11).hasSellIn(12);
     }
 
-    /**
-     * QUALITY
-     */
-
     @Test
-    public void defaultItemShouldChangeQualityOneByOne() {
+    public void defaultItemShouldDecreaseQualityByOneAsDaysGoBy() {
 
     }
 
     @Test
-    public void defaultItemShouldChangeQualityTwiceFasterAfterSellIn() {
+    public void defaultItemShouldDecreaseSellInByOneAsDaysGoBy() {
+
+    }
+
+    @Test
+    public void defaultItemShouldDecreaseQualityTwiceFasterAfterSellIn() {
 
     }
 
@@ -58,6 +58,16 @@ public class GildedRoseTest {
 
     @Test
     public void agedBrieShouldIncreaseQualityAsDaysGoBy() {
+
+    }
+
+    @Test
+    public void sulfurasShouldNeverDecreaseQuality() {
+
+    }
+
+    @Test
+    public void sulfurasShouldNotDecreaseSellIn() {
 
     }
 
@@ -80,23 +90,4 @@ public class GildedRoseTest {
     public void backstagePassShouldHaveQualityZeroAfterSellIn() {
 
     }
-
-    @Test
-    public void sulfurasShouldNeverChangeQuality() {
-
-    }
-
-    /**
-     * SELL IN
-     */
-    @Test
-    public void sellInShouldDecreaseByOneAsDaysGoBy() {
-
-    }
-
-    @Test
-    public void sulfurasSellInShouldNotDecrease() {
-
-    }
-
 }
