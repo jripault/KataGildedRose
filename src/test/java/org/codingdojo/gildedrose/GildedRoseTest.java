@@ -7,6 +7,7 @@ import org.junit.runners.JUnit4;
 
 import static org.codingdojo.gildedrose.builder.ItemBuilder.anItem;
 import static org.codingdojo.gildedrose.model.ItemAssert.assertThat;
+import static org.junit.Assert.fail;
 
 /**
  * run mvn clean package
@@ -33,61 +34,61 @@ public class GildedRoseTest {
 
     @Test
     public void defaultItemShouldDecreaseQualityByOneAsDaysGoBy() {
-
+        fail("Not yet implemented");
     }
 
     @Test
     public void defaultItemShouldDecreaseSellInByOneAsDaysGoBy() {
-
+        fail("Not yet implemented");
     }
 
     @Test
     public void defaultItemShouldDecreaseQualityTwiceFasterAfterSellIn() {
-
+        fail("Not yet implemented");
     }
 
     @Test
     public void defaultItemShouldNotHaveNegativeQuality() {
-
+        fail("Not yet implemented");
     }
 
     @Test
     public void itemShouldNotHaveQualityMoreThanFifty() {
-
+        fail("Not yet implemented");
     }
 
     @Test
     public void agedBrieShouldIncreaseQualityAsDaysGoBy() {
-
+        fail("Not yet implemented");
     }
 
     @Test
     public void sulfurasShouldNeverDecreaseQuality() {
-
+        fail("Not yet implemented");
     }
 
     @Test
     public void sulfurasShouldNotDecreaseSellIn() {
-
+        fail("Not yet implemented");
     }
 
     @Test
     public void backstagePassShouldIncreaseQualityAsDaysGoBy() {
-
+        fail("Not yet implemented");
     }
 
     @Test
     public void backstagePassShouldIncreaseQualityByTwoWhenSellInInferiorToTenDays() {
-
+        fail("Not yet implemented");
     }
 
     @Test
     public void backstagePassShouldIncreaseQualityByThreeWhenSellInInferiorToFiveDays() {
-
+        fail("Not yet implemented");
     }
 
     @Test
     public void backstagePassShouldHaveQualityZeroAfterSellIn() {
-
+        fail("Not yet implemented");
     }
 }
