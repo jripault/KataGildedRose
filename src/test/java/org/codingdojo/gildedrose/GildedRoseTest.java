@@ -10,26 +10,24 @@ import static org.codingdojo.gildedrose.model.ItemAssert.assertThat;
 import static org.junit.Assert.fail;
 
 /**
- * run mvn clean package
+ * run 'mvn clean package'
  * go to \target\site\jacoco\index.html to consult
  */
 @RunWith(JUnit4.class)
 public class GildedRoseTest {
 
+    //Example
     @Test
-    //example
-    public void unTest() {
+    public void example() {
         //Given
-        Item item;
-        GildedRose gildedRose;
+        Item item = anItem().withName("test").withSellIn(12).withQuality(8).build();
+        GildedRose gildedRose = new GildedRose(new Item[]{item});
 
         //When
-        item = anItem().withName("test").withQuality(12).withSellIn(13).build();
-        gildedRose = new GildedRose(new Item[]{item});
         gildedRose.updateQuality();
 
         //Then
-        assertThat(item).hasQuality(11).hasSellIn(12);
+        assertThat(item).hasSellIn(11).hasQuality(7);
     }
 
     @Test
