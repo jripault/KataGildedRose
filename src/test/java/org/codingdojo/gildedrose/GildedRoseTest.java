@@ -18,7 +18,7 @@ public class GildedRoseTest {
 
     //Example
     @Test
-    public void unTest() {
+    public void example() {
         //Given
         Item item = anItem().withName("test").withQuality(12).withSellIn(13).build();
         GildedRose gildedRose = new GildedRose(new Item[]{item});
