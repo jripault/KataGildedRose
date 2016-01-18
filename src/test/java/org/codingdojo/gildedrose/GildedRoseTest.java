@@ -16,16 +16,14 @@ import static org.junit.Assert.fail;
 @RunWith(JUnit4.class)
 public class GildedRoseTest {
 
+    //Example
     @Test
-    //example
     public void unTest() {
         //Given
-        Item item;
-        GildedRose gildedRose;
+        Item item = anItem().withName("test").withQuality(12).withSellIn(13).build();
+        GildedRose gildedRose = new GildedRose(new Item[]{item});
 
         //When
-        item = anItem().withName("test").withQuality(12).withSellIn(13).build();
-        gildedRose = new GildedRose(new Item[]{item});
         gildedRose.updateQuality();
 
         //Then
