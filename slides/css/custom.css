@@ -1,0 +1,43 @@
+img {
+    width: 25%;
+}
+
+.img-centered {
+    width: 80%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto
+}
+
+.pagination {
+    right: 2.6em;
+}
+
+.strike {
+    text-decoration: line-through;
+    padding-left: 70px;
+}
+
+li {
+    padding-left: 1em;
+    font-size: 30px;
+    padding-bottom: 10px;
+}
+
+ul .items {
+    list-style: circle;
+}
+
+a {
+    text-decoration: underline;
+}
+
+section {
+    border-left: 1em solid #434343;
+    border-right: 1em solid #434343;
+}
+
+.subSection {
+    padding-left: 70px;
+}
+
