@@ -47,11 +47,21 @@ a {
 }
 
 .kata.title {
-    background: #FF6319;
+    background: orange;
     border: none;
     color: white;
 }
 
 .kata {
-    border-left: solid 0.6em #FF6319;
+    border-left: solid 0.6em orange;
+}
+
+.iteration.title {
+    background: #DD1B16;
+    border: none;
+    color: white;
+}
+
+.iteration {
+    border-left: solid 0.6em #DD1B16;
 }
