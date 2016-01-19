@@ -1,85 +1,38 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Ruban</title>
+    <title>Coding Dojo : GildedRose</title>
     <meta charset="utf-8"/>
     <link rel="stylesheet" href="components/normalize-css/normalize.css"/>
     <link rel="stylesheet" href="components/font-awesome/build/assets/font-awesome/css/font-awesome.min.css"/>
     <link rel="stylesheet" href="components/highlightjs/styles/tomorrow.css"/>
     <link rel="stylesheet" href="css/ruban.min.css"/>
     <link rel="stylesheet" href="css/ruban-print.min.css" media="print"/>
-    <style>
-        section {
-            border-left: 1em solid #434343;
-            border-right: 1em solid #434343;
-        }
-
-        .pagination {
-            right: 2.6em;
-        }
-
-        pre code {
-            background-color: inherit;
-        }
-
-        pre .xml .javascript {
-            opacity: 1;
-        }
-
-        ul .items {
-            list-style: circle;
-        }
-
-        li {
-            padding-left: 1em;
-            font-size: 30px;
-            padding-bottom: 10px;
-        }
-
-        a {
-            text-decoration: underline;
-        }
-
-        .strike {
-            text-decoration: line-through;
-            padding-left: 70px;
-        }
-
-        .subSection {
-            padding-left: 70px;
-        }
-
-        img {
-            width: 25%;
-        }
-
-        .img-centered {
-            width: 80%;
-            display: block;
-            margin-left: auto;
-            margin-right: auto
-        }
-    </style>
+    <link rel="stylesheet" href="css/custom.css"/>
 </head>
 
 <body>
-<section id="ruban">
+<section id="coding-dojo">
     <h1>Coding Dojo</h1>
 </section>
-<section id="ruban">
+
+<section id="intro">
     <h1>Coding Dojo ?</h1>
     <ul class="steps">
-        <li>C'est quoi ?</li> <!-- Dojo : lieu d'apprentissage des arts martiaux - Kata : forme d'entrainement, répétition d'un exercice -->
+        <li>C'est quoi ?</li>
+        <!-- Dojo : lieu d'apprentissage des arts martiaux - Kata : forme d'entrainement, répétition d'un exercice -->
         <li class="subSection">Lieu d'apprentissage</li>
-        <li>Pour quoi faire ?</li> <!-- l'objectif premier est d'apprendre et non pas de terminer l'excercice -->
+        <li>Pour quoi faire ?</li>
+        <!-- l'objectif premier est d'apprendre et non pas de terminer l'excercice -->
         <li class="strike">Terminer l'exercice</li>
         <li class="subSection">APPRENDRE !</li>
-        <li>Terrain d'entrainement</li> <!-- Safe (no prod), error is ok, favoriser l'échange -->
+        <li>Terrain d'entrainement</li>
+        <!-- Safe (no prod), error is ok, favoriser l'échange -->
         <li class="strike">Code de prod</li>
         <li class="subSection">Error is ok</li>
     </ul>
 </section>
-<section id="table-of-contents">
+<section id="organisation">
     <h1>Organisation</h1>
     <ul class="steps">
         <li>Pair Programming</li>
@@ -95,14 +48,16 @@
         <li>Un exercice facile à appréhender, plusieurs solutions possibles</li>
     </ul>
 </section>
-<section id="table-of-contents2">
+<section id="planning">
     <h1>Planning du dojo</h1>
     <ul>
-        <li>Une itération de tests (30min.)</li>
+        <li>Une itération de tests (25min.)</li>
         <li>Rétro. (10min.)</li>
         <li>Itération Refactoring (20min.)</li>
         <li>Rétro. (10min.)</li>
-        <li>Itération Refactoring (30min.)</li>
+        <li>Itération Refactoring (20min.)</li>
+        <li>Rétro. (10min.)</li>
+        <li>Itération Refactoring (10min.)</li>
         <li>Rétro. & Conclusion (10min.)</li>
     </ul>
 </section>
@@ -111,20 +66,26 @@
     <ul>
         <li>Environnement : Ton Eclipse ou pour changer <a href="https://www.jetbrains.com/idea/">IntelliJ</a></li>
         <li><a href="https://github.com/jripault/KataGildedRose">Le Code</a></li>
-        <li>Pour les tests :</a>
+        <li>Pour les tests :
             <ul>
                 <li><a href="http://junit.org/">Junit</a></li>
-                <li><a href="http://joel-costigliola.github.io/assertj/">AssertJ</a> (librairie d'assertions, fork de FestAssert)</li>
+                <li><a href="http://joel-costigliola.github.io/assertj/">AssertJ</a> (librairie d'assertions, fork de
+                    FestAssert)
+                </li>
                 <li><a href="http://www.eclemma.org/">Eclemma</a> (plugin couverture de code sous Eclipse)</li>
-                <li><a href="http://infinitest.github.io/">InfiniTest</a> (plugin IntelliJ/Eclipse pour lancer les tests unitaires automatiquement à chaque changement)</li>
-                <li><a href="http://moreunit.sourceforge.net/">MoreUnit</a> (plugin Intellij/Eclipse pour améliorer l'intégration de ses tests unitaires dans l'IDE)</li>
+                <li><a href="http://infinitest.github.io/">InfiniTest</a> (plugin IntelliJ/Eclipse pour lancer les tests
+                    unitaires automatiquement à chaque changement)
+                </li>
+                <li><a href="http://moreunit.sourceforge.net/">MoreUnit</a> (plugin Intellij/Eclipse pour améliorer
+                    l'intégration de ses tests unitaires dans l'IDE)
+                </li>
             </ul>
         </li>
     </ul>
 </section>
+
 <section id="rules">
     <h1>Les règles du Kata</h1>
-
     <h4>Vous tenez un magasin d'items</h4>
     <ul class="items">
         <li>Tous les items ont une date de péremption (sellIn) qui défini le nombre de jours restants pour vendre l'objet</li>
@@ -146,11 +107,12 @@
     <h1>Encore des règles</h1>
     <ul class="steps">
         <li>"Backstage passes", comme "aged brie", augmente en qualité quand sa valeur de péremption approche;
-            Ainsi qualité augmente de 2 quand il reste 10 jours ou moins, et augmente de 3 quand il reste 5 jours ou moins. Par
-            contre elle tombe à 0 quand la date est passée.<br/>
+            Ainsi qualité augmente de 2 quand il reste 10 jours ou moins, et augmente de 3 quand il reste 5 jours ou
+            moins. Par contre elle tombe à 0 quand la date est passée.<br/>
         </li>
-        <li><strong>Demande d'évolution :</strong><br/>Vous venez de trouver un nouveau fournisseur d'item maudits: il fournit les mêmes items mais ils se dégradent deux fois plus vite.
-            Il faut donc mettre à jour le système pour prendre cela en compte.
+        <li><strong>Demande d'évolution :</strong><br/>Vous venez de trouver un nouveau fournisseur d'item maudits: il
+            fournit les mêmes items mais ils se dégradent deux fois plus vite. Il faut donc mettre à jour le système
+            pour prendre cela en compte.
         </li>
     </ul>
 </section>
@@ -171,9 +133,9 @@
     </ul>
 </section>
 <section id="iteration1">
-    <h1>A vos marques, Prêts ? Testez ! (30 min)</h1>
+    <h1>A vos marques, Prêts ? Testez ! (25 min)</h1>
 </section>
-<section id="Retro1">
+<section id="retro1">
     <h1>Rétro (10 min)</h1>
     <ul class="steps">
         <li>Difficultés rencontrées</li>
@@ -193,9 +155,12 @@
     </ul>
 </section>
 <section id="iteration3">
-    <h1>Et ca refactore encore (30 min)</h1>
+    <h1>Et ca refactore encore (20 min)</h1>
 </section>
-<section id="retroExo">
+<section id="iteration4">
+    <h1>Un dernier pour la route (10 min)</h1>
+</section>
+<section id="retro3">
     <h1>Rétro de l'exercice (10 min)</h1>
     <ul class="steps">
         <li>Tour de table : avancement, solutions, difficultés, ressenti</li>
@@ -204,8 +169,8 @@
         <li>Toujours peur du legacy ?</li>
     </ul>
 </section>
-<section id="retroDojo">
-    <h1>Rétro du dojo</h1>
+<section id="retro4">
+    <h1>Rétro du dojo (10 min)</h1>
     <ul class="steps">
         <li>What went well ?</li>
         <li>What could be improved ?</li>
@@ -213,6 +178,7 @@
         <li>ROTI</li>
     </ul>
 </section>
+
 <section id="references">
     <h1>Références</h1>
     <a href="http://www.amazon.fr/Test-Driven-Development-By-Example/dp/0321146530"><img src="http://ecx.images-amazon.com/images/I/51K3KXOKrJL._BO2,204,203,200_PIsitb-sticker-arrow-click,TopRight,35,-76_SX385_SY500_CR,0,0,385,500_SH20_OU08_.jpg"/></a>
