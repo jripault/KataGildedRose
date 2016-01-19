@@ -7,7 +7,7 @@ import org.junit.runners.JUnit4;
 
 import static org.codingdojo.gildedrose.builder.ItemBuilder.anItem;
 import static org.codingdojo.gildedrose.model.ItemAssert.assertThat;
-
+import static org.junit.Assert.fail;
 /**
  * run 'mvn clean package'
  * go to \target\site\jacoco\index.html to consult
@@ -31,153 +31,61 @@ public class GildedRoseTest {
 
     @Test
     public void defaultItemShouldDecreaseQualityByOneAsDaysGoBy() {
-        //Given
-        Item item = anItem().withName("test").withSellIn(12).withQuality(8).build();
-        GildedRose gildedRose = new GildedRose(new Item[]{item});
-
-        //When
-        gildedRose.updateQuality();
-
-        //Then
-        assertThat(item).hasQuality(7);
+        fail("Not yet implemented");
     }
 
     @Test
     public void defaultItemShouldDecreaseSellInByOneAsDaysGoBy() {
-        //Given
-        Item item = anItem().withName("test").withSellIn(12).withQuality(8).build();
-        GildedRose gildedRose = new GildedRose(new Item[]{item});
-
-        //When
-        gildedRose.updateQuality();
-
-        //Then
-        assertThat(item).hasSellIn(11);
+        fail("Not yet implemented");
     }
 
     @Test
     public void defaultItemShouldDecreaseQualityTwiceFasterAfterSellIn() {
-        //Given
-        Item item = anItem().withName("test").withSellIn(0).withQuality(8).build();
-        GildedRose gildedRose = new GildedRose(new Item[]{item});
-
-        //When
-        gildedRose.updateQuality();
-
-        //Then
-        assertThat(item).hasQuality(6);
+        fail("Not yet implemented");
     }
 
     @Test
     public void defaultItemShouldNotHaveNegativeQuality() {
-        //Given
-        Item item = anItem().withName("test").withSellIn(12).withQuality(0).build();
-        GildedRose gildedRose = new GildedRose(new Item[]{item});
-
-        //When
-        gildedRose.updateQuality();
-
-        //Then
-        assertThat(item).hasQuality(0);
+        fail("Not yet implemented");
     }
 
-    @Test(expected = IllegalArgumentException.class)
+    @Test
     public void itemShouldNotHaveQualityMoreThanFifty() {
-        //Given
-        anItem().withName("test").withQuality(51).build();
-
-        //When
-        //Then
+        fail("Not yet implemented");
     }
 
     @Test
     public void agedBrieShouldIncreaseQualityAsDaysGoBy() {
-        //Given
-        Item item = anItem().withName("Aged Brie").withSellIn(12).withQuality(8).build();
-        GildedRose gildedRose = new GildedRose(new Item[]{item});
-
-        //When
-        gildedRose.updateQuality();
-
-        //Then
-        assertThat(item).hasQuality(9);
+        fail("Not yet implemented");
     }
 
     @Test
     public void sulfurasShouldNeverDecreaseQuality() {
-        //Given
-        Item item = anItem().withName("Sulfuras, Hand of Ragnaros").withSellIn(12).withQuality(8).build();
-        GildedRose gildedRose = new GildedRose(new Item[]{item});
-
-        //When
-        gildedRose.updateQuality();
-
-        //Then
-        assertThat(item).hasQuality(8);
+        fail("Not yet implemented");
     }
 
     @Test
     public void sulfurasShouldNotDecreaseSellIn() {
-        //Given
-        Item item = anItem().withName("Sulfuras, Hand of Ragnaros").withSellIn(12).withQuality(8).build();
-        GildedRose gildedRose = new GildedRose(new Item[]{item});
-
-        //When
-        gildedRose.updateQuality();
-
-        //Then
-        assertThat(item).hasSellIn(12);
+        fail("Not yet implemented");
     }
 
     @Test
     public void backstagePassShouldIncreaseQualityAsDaysGoBy() {
-        //Given
-        Item item = anItem().withName("Backstage passes to a TAFKAL80ETC concert").withSellIn(12).withQuality(8).build();
-        GildedRose gildedRose = new GildedRose(new Item[]{item});
-
-        //When
-        gildedRose.updateQuality();
-
-        //Then
-        assertThat(item).hasQuality(9);
+        fail("Not yet implemented");
     }
 
     @Test
     public void backstagePassShouldIncreaseQualityByTwoWhenSellInInferiorToTenDays() {
-        //Given
-        Item item = anItem().withName("Backstage passes to a TAFKAL80ETC concert").withSellIn(10).withQuality(8).build();
-        GildedRose gildedRose = new GildedRose(new Item[]{item});
-
-        //When
-        gildedRose.updateQuality();
-
-        //Then
-        assertThat(item).hasQuality(10);
+        fail("Not yet implemented");
     }
 
     @Test
     public void backstagePassShouldIncreaseQualityByThreeWhenSellInInferiorToFiveDays() {
-        //Given
-        Item item = anItem().withName("Backstage passes to a TAFKAL80ETC concert").withSellIn(5).withQuality(8).build();
-        GildedRose gildedRose = new GildedRose(new Item[]{item});
-
-        //When
-        gildedRose.updateQuality();
-
-        //Then
-        assertThat(item).hasQuality(11);
+        fail("Not yet implemented");
     }
 
     @Test
     public void backstagePassShouldHaveQualityZeroAfterSellIn() {
-        //Given
-        Item item = anItem().withName("Backstage passes to a TAFKAL80ETC concert").withSellIn(0).withQuality(8).build();
-        GildedRose gildedRose = new GildedRose(new Item[]{item});
-
-        //When
-        gildedRose.updateQuality();
-
-        //Then
-        assertThat(item).hasQuality(0);
+        fail("Not yet implemented");
     }
 }
