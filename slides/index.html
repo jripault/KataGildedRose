@@ -12,11 +12,11 @@
 </head>
 
 <body>
-<section id="coding-dojo">
-    <h1>Coding Dojo</h1>
+<section id="coding-dojo" class="coding-dojo title">
+    <h1><img class="img-centered" src="img/codingDojo.png"></h1>
 </section>
 
-<section id="intro">
+<section id="intro" class="coding-dojo">
     <h1>Coding Dojo ?</h1>
     <ul class="steps">
         <li>C'est quoi ?</li>
@@ -32,7 +32,7 @@
         <li class="subSection">Error is ok</li>
     </ul>
 </section>
-<section id="organisation">
+<section id="organisation" class="coding-dojo">
     <h1>Organisation</h1>
     <ul class="steps">
         <li>Pair Programming</li>
@@ -48,7 +48,7 @@
         <li>Un exercice facile à appréhender, plusieurs solutions possibles</li>
     </ul>
 </section>
-<section id="planning">
+<section id="planning" class="coding-dojo">
     <h1>Planning du dojo</h1>
     <ul>
         <li>Une itération de tests (25min.)</li>
@@ -61,8 +61,8 @@
         <li>Rétro. & Conclusion (10min.)</li>
     </ul>
 </section>
-<section id="installation">
-    <h1><i class="icon-download"></i> Installation</h1>
+<section id="installation" class="coding-dojo">
+    <h1><i class="fa fa-download"></i> Installation</h1>
     <ul>
         <li>Environnement : Ton Eclipse ou pour changer <a href="https://www.jetbrains.com/idea/">IntelliJ</a></li>
         <li><a href="https://github.com/jripault/KataGildedRose">Le Code</a></li>
@@ -76,7 +76,7 @@
                 <li><a href="http://infinitest.github.io/">InfiniTest</a> (plugin IntelliJ/Eclipse pour lancer les tests
                     unitaires automatiquement à chaque changement)
                 </li>
-                <li><a href="http://moreunit.sourceforge.net/">MoreUnit</a> (plugin Intellij/Eclipse pour améliorer
+                <li><a href="http://moreunit.sourceforge.net/">MoreUnit</a> (plugin IntelliJ/Eclipse pour améliorer
                     l'intégration de ses tests unitaires dans l'IDE)
                 </li>
             </ul>
@@ -84,49 +84,60 @@
     </ul>
 </section>
 
-<section id="rules">
-    <h1>Les règles du Kata</h1>
-    <h4>Vous tenez un magasin d'items</h4>
-    <ul class="items">
-        <li>Tous les items ont une date de péremption (sellIn) qui défini le nombre de jours restants pour vendre
-            l'objet
+<section id="kata" class="kata title">
+    <h1 style="text-align: center;">Kata !!!</h1>
+    <ul class="steps">
+        <li>
+            <blockquote>Whatever luck I had, I made. I was never a natural athlete, but I paid my dues in sweat and
+             concentration and took the time necessary to learn Karate and become World Champion.
+            </blockquote>
         </li>
-        <li>Chaque item a une valeur de qualité qui indique son prix</li>
-        <li>A la fin de chaque jour, le système doit baisser ces deux valeurs</li>
+       <li>
+           <small>- Chuck Norris (American martial artist and actor. Also, the only man who has counted to infinity. <strong>Twice</strong>.)</small>
+       </li>
     </ul>
 </section>
-<section id="more-rules">
-    <h1>Encore des règles</h1>
+<section id="rules" class="kata">
+    <h1><i class="fa fa-check"></i>Les règles du Kata</h1>
+    <h4>Vous tenez un magasin d'items :</h4>
     <ul class="items">
-        <li>Quand la date de péremption est passée, la qualité se degrade deux fois plus vite</li>
-        <li>La qualité d'un item ne peut pas être négative</li>
-        <li>La qualité d'un item ne peut pas dépasser 50</li>
-        <li>Pour le "Aged Brie" : Contrairement aux autres items, plus le temps passe plus sa qualité augmente</li>
-        <li>"Sulfuras" étant un item légendaire, n'a pas de date de péremption et ne perd pas en qualité</li>
+        <li>Tous les items ont une date de péremption (sellIn) qui défini le nombre de jours restants pour vendre l'objet.</li>
+        <li>Chaque item a une valeur de qualité qui indique son prix.</li>
+        <li>A la fin de chaque jour, le système doit baisser ces deux valeurs.</li>
     </ul>
 </section>
-<section id="more-rules2">
-    <h1>Encore des règles</h1>
+<section id="more-rules" class="kata">
+    <h1>Encore des règles...</h1>
+    <ul class="items">
+        <li>Quand la date de péremption est passée, la qualité se degrade deux fois plus vite.</li>
+        <li>La qualité d'un item ne peut pas être négative.</li>
+        <li>La qualité d'un item ne peut pas dépasser 50.</li>
+        <li>Pour le "Aged Brie" : Contrairement aux autres items, plus le temps passe plus sa qualité augmente.</li>
+        <li>"Sulfuras" étant un item légendaire, n'a pas de date de péremption et ne perd pas en qualité.</li>
+    </ul>
+</section>
+<section id="more-rules2" class="kata">
+    <h1>Encore des règles...</h1>
     <ul class="steps">
         <li>"Backstage passes", comme "aged brie", augmente en qualité quand sa valeur de péremption approche;
             Ainsi qualité augmente de 2 quand il reste 10 jours ou moins, et augmente de 3 quand il reste 5 jours ou
             moins. Par contre elle tombe à 0 quand la date est passée.<br/>
         </li>
-        <li><strong>Demande d'évolution :</strong><br/>Vous venez de trouver un nouveau fournisseur d'item maudits: il
-            fournit les mêmes items mais ils se dégradent deux fois plus vite. Il faut donc mettre à jour le système
+        <li><br/><strong>Demande d'évolution :</strong><br/>Vous venez de trouver un nouveau fournisseur d'item maudits :
+            il fournit les mêmes items mais ils se dégradent deux fois plus vite. Il faut donc mettre à jour le système
             pour prendre cela en compte.
         </li>
     </ul>
 </section>
-<section id="code-rules">
+<section id="code-rules" class="kata">
     <h1>Règles sur le code</h1>
     <ul>
-        <li><strong>Pas le droit de toucher à la classe Item</strong></li>
-        <li>Uniquement refactorer la méthode updateQuality de la classe GildedRose</li>
+        <li style="color: red"><strong>Pas le droit de toucher à la classe Item</strong></li>
+        <li>Uniquement refactorer la méthode <strong>updateQuality</strong> de la classe <strong>GildedRose</strong></li>
         <li>Tout le reste est autorisé, soyez imaginatif</li>
     </ul>
 </section>
-<section id="first-steps">
+<section id="first-steps" class="kata">
     <h1>First steps</h1>
     <ul class="steps">
         <li>Implémenter les tests</li>
@@ -134,44 +145,44 @@
         <li><img class="img-centered" src="img/testing.gif"></li>
     </ul>
 </section>
-<section id="iteration1">
+<section id="iteration1" class="kata">
     <h1>A vos marques, Prêts ? Testez ! (25 min)</h1>
 </section>
-<section id="retro1">
+<section id="retro1" class="kata">
     <h1>Rétro (10 min)</h1>
     <ul class="steps">
         <li>Difficultés rencontrées</li>
-        <li>Couverture</li>
+        <li>Couverture de tests</li>
         <li>Tester != coder</li>
     </ul>
 </section>
-<section id="iteration2">
+<section id="iteration2" class="kata">
     <h1>A vos marques, Prêts ? Refactorez ! (20 min)</h1>
 </section>
-<section id="refactor-hints">
+<section id="refactor-hints" class="kata">
     <h1>Refactor hints (10 minutes)</h1>
     <ul class="steps">
-        <li>Dupliquer le code pour mieux refactorer: débusquer la duplication</li>
+        <li>Dupliquer le code pour mieux refactorer : débusquer la duplication</li>
         <li>Apprenez à utiliser votre IDE</li>
         <li>Extract, extract, extract</li>
     </ul>
 </section>
-<section id="iteration3">
+<section id="iteration3" class="kata">
     <h1>Et ca refactore encore (20 min)</h1>
 </section>
-<section id="iteration4">
+<section id="iteration4" class="kata">
     <h1>Un dernier pour la route (10 min)</h1>
 </section>
-<section id="retro3">
-    <h1>Rétro de l'exercice (10 min)</h1>
+<section id="retro3" class="kata">
+    <h1>Rétro du kata (10 min)</h1>
     <ul class="steps">
         <li>Tour de table : avancement, solutions, difficultés, ressenti</li>
-        <li>1 exercice : 5 solutions différentes</li><!-- différentes approches, jusqu'ou va-ton dans le refactor -->
+        <li><strong>1</strong> exercice : <strong>5</strong> solutions différentes</li><!-- différentes approches, jusqu'ou va-ton dans le refactor -->
         <li>Pair programming ?</li>
         <li>Toujours peur du legacy ?</li>
     </ul>
 </section>
-<section id="retro4">
+<section id="retro4" class="kata">
     <h1>Rétro du dojo (10 min)</h1>
     <ul class="steps">
         <li>What went well ?</li>
@@ -181,8 +192,8 @@
     </ul>
 </section>
 
-<section id="references">
-    <h1>Références</h1>
+<section id="references" class="coding-dojo">
+    <h1><i class="fa fa-book"></i> Références</h1>
     <a href="http://www.amazon.fr/Test-Driven-Development-By-Example/dp/0321146530"><img src="img/testDrivenDevelopmentByExample.jpg"/></a>
     <a href="http://www.amazon.fr/Clean-Code-Handbook-Software-Craftsmanship/dp/0132350882"><img src="img/cleanCode.jpg"/></a>
     <a href="http://www.amazon.fr/Effective-Java-Joshua-Bloch/dp/0321356683"><img src="img/refactoringImprovingDesignExistingCode.jpg"/></a>

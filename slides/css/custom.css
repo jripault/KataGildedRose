@@ -32,12 +32,26 @@ a {
     text-decoration: underline;
 }
 
-section {
-    border-left: 1em solid #434343;
-    border-right: 1em solid #434343;
-}
-
 .subSection {
     padding-left: 70px;
 }
 
+.coding-dojo.title {
+    background: #0066A1;
+    border: none;
+    color: white;
+}
+
+.coding-dojo {
+    border-left: solid 0.6em #0066A1;
+}
+
+.kata.title {
+    background: #FF6319;
+    border: none;
+    color: white;
+}
+
+.kata {
+    border-left: solid 0.6em #FF6319;
+}
