@@ -1,7 +1,7 @@
 package org.codingdojo;
 
-import org.codingdojo.gildedrose.model.Item;
 import org.codingdojo.gildedrose.model.BetterItem;
+import org.codingdojo.gildedrose.model.Item;
 
 import java.util.Arrays;
 

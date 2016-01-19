@@ -6,17 +6,16 @@ public class Conjured extends BetterItem {
 
     public Conjured(int sellIn, int quality) {
         this.name = SULFURAS;
-		this.setSellIn(sellIn);
-		this.setQuality(quality);
-	}
+        this.setSellIn(sellIn);
+        this.setQuality(quality);
+    }
 
     @Override
     public void passOneDay() {
         this.sellIn--;
-        if(this.sellIn < 0) {
+        if (this.sellIn < 0) {
             this.decreaseQuality(4);
-        }
-        else {
+        } else {
             this.decreaseQuality(2);
         }
     }

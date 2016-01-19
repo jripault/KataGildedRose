@@ -19,8 +19,8 @@ public class BetterItem extends Item {
     }
 
     public BetterItem(String name, int sellIn, int quality) {
-		super(name, sellIn, quality);
-	}
+        super(name, sellIn, quality);
+    }
 
     public boolean is(String name) {
         return (name != null) && name.equals(this.name);
@@ -32,7 +32,7 @@ public class BetterItem extends Item {
 
     protected void increaseQuality(int value) {
         this.quality += value;
-        if(this.quality > MAX_QUALITY) {
+        if (this.quality > MAX_QUALITY) {
             this.quality = MAX_QUALITY;
         }
     }
@@ -43,17 +43,16 @@ public class BetterItem extends Item {
 
     protected void decreaseQuality(int value) {
         this.quality -= value;
-        if(this.quality < MIN_QUALITY) {
+        if (this.quality < MIN_QUALITY) {
             this.quality = 0;
         }
     }
 
     public void passOneDay() {
         this.sellIn--;
-        if(sellIn < 0) {
+        if (sellIn < 0) {
             this.decreaseQuality(2);
-        }
-        else {
+        } else {
             this.decreaseQuality();
         }
     }

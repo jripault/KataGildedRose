@@ -6,9 +6,9 @@ public class Sulfuras extends BetterItem {
 
     public Sulfuras(int sellIn, int quality) {
         this.name = SULFURAS;
-		this.setSellIn(sellIn);
-		this.setQuality(quality);
-	}
+        this.setSellIn(sellIn);
+        this.setQuality(quality);
+    }
 
     @Override
     public void passOneDay() {

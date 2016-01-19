@@ -9,23 +9,20 @@ public class Backstage extends BetterItem {
 
     public Backstage(int sellIn, int quality) {
         this.name = BACKSTAGE;
-		this.setSellIn(sellIn);
-		this.setQuality(quality);
-	}
+        this.setSellIn(sellIn);
+        this.setQuality(quality);
+    }
 
     @Override
     public void passOneDay() {
         this.sellIn--;
-        if(this.sellIn < 0) {
+        if (this.sellIn < 0) {
             this.quality = 0;
-        }
-        else if(this.sellIn < SHORT_LIMIT_DAYS) {
+        } else if (this.sellIn < SHORT_LIMIT_DAYS) {
             this.increaseQuality(3);
-        }
-        else if(this.sellIn < LONG_LIMIT_DAYS) {
+        } else if (this.sellIn < LONG_LIMIT_DAYS) {
             this.increaseQuality(2);
-        }
-        else {
+        } else {
             this.increaseQuality(1);
         }
     }

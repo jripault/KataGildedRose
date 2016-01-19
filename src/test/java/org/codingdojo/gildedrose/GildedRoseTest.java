@@ -1,145 +1,186 @@
 package org.codingdojo.gildedrose;
 
-
-import org.codingdojo.gildedrose.model.*;
+import org.codingdojo.gildedrose.model.Item;
 import org.codingdojo.gildedrose.model.specific.AgedBrie;
 import org.codingdojo.gildedrose.model.specific.Backstage;
-import org.codingdojo.gildedrose.model.specific.Conjured;
 import org.codingdojo.gildedrose.model.specific.Sulfuras;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
 
-import static org.codingdojo.gildedrose.model.ItemAssert.*;
 import static org.codingdojo.gildedrose.builder.ItemBuilder.anItem;
+import static org.codingdojo.gildedrose.model.ItemAssert.assertThat;
 
 /**
- * run mvn clean package
+ * run 'mvn clean package'
  * go to \target\site\jacoco\index.html to consult
  */
-
 @RunWith(JUnit4.class)
 public class GildedRoseTest {
 
-    static GildedRose buildGildedRoseAndUpdateQuality(Item item) {
-        GildedRose gildedRose = new GildedRose(new Item[] { item });
-        gildedRose.updateQuality();
-        return gildedRose;
-    }
-
+    //Example
     @Test
-    //example
-    public void unTest() {
-    	//Given
-    	Item item;
+    public void example() {
+        //Given
+        Item item = anItem().withName("test").withSellIn(12).withQuality(8).build();
+        GildedRose gildedRose = new GildedRose(new Item[]{item});
+
         //When
-		item = anItem().withName("test").withQuality(12).withSellIn(13).build();
+        gildedRose.updateQuality();
+
         //Then
-        assertThat(item).hasQuality(12).hasSellIn(13);
-    }
-
-    /**
-     * QUALITY
-     */
-    @Test
-    public void defaultItemShouldChangeQualityOneByOne() {
-        Item item = anItem().withName("default").withQuality(12).withSellIn(13).build();
-        GildedRose gildedRose = buildGildedRoseAndUpdateQuality(item);
-        assertThat(item).hasQuality(11);
+        assertThat(item).hasSellIn(11).hasQuality(7);
     }
 
     @Test
-    public void defaultItemShouldChangeQualityTwiceFasterAfterSellIn() {
-        Item item = anItem().withName("default").withQuality(12).withSellIn(0).build();
-        GildedRose gildedRose = buildGildedRoseAndUpdateQuality(item);
-        assertThat(item).hasQuality(10);
+    public void defaultItemShouldDecreaseQualityByOneAsDaysGoBy() {
+        //Given
+        Item item = anItem().withName("test").withSellIn(12).withQuality(8).build();
+        GildedRose gildedRose = new GildedRose(new Item[]{item});
+
+        //When
+        gildedRose.updateQuality();
+
+        //Then
+        assertThat(item).hasQuality(7);
+    }
+
+    @Test
+    public void defaultItemShouldDecreaseSellInByOneAsDaysGoBy() {
+        //Given
+        Item item = anItem().withName("test").withSellIn(12).withQuality(8).build();
+        GildedRose gildedRose = new GildedRose(new Item[]{item});
+
+        //When
+        gildedRose.updateQuality();
+
+        //Then
+        assertThat(item).hasSellIn(11);
+    }
+
+    @Test
+    public void defaultItemShouldDecreaseQualityTwiceFasterAfterSellIn() {
+        //Given
+        Item item = anItem().withName("test").withSellIn(0).withQuality(8).build();
+        GildedRose gildedRose = new GildedRose(new Item[]{item});
+
+        //When
+        gildedRose.updateQuality();
+
+        //Then
+        assertThat(item).hasQuality(6);
     }
 
     @Test
     public void defaultItemShouldNotHaveNegativeQuality() {
-        Item item = anItem().withName("default").withQuality(0).withSellIn(10).build();
-        GildedRose gildedRose = buildGildedRoseAndUpdateQuality(item);
+        //Given
+        Item item = anItem().withName("test").withSellIn(12).withQuality(0).build();
+        GildedRose gildedRose = new GildedRose(new Item[]{item});
+
+        //When
+        gildedRose.updateQuality();
+
+        //Then
         assertThat(item).hasQuality(0);
     }
 
-    @Test
+    @Test(expected = IllegalArgumentException.class)
     public void itemShouldNotHaveQualityMoreThanFifty() {
-        AgedBrie item = new AgedBrie(10, 50);
-        GildedRose gildedRose = buildGildedRoseAndUpdateQuality(item);
-        gildedRose.updateQuality();
-        assertThat(item).hasQuality(50);
+        //Given
+        anItem().withName("test").withQuality(51).build();
+
+        //When
+        //Then
     }
 
     @Test
     public void agedBrieShouldIncreaseQualityAsDaysGoBy() {
-        AgedBrie item = new AgedBrie(10, 10);
-        GildedRose gildedRose = buildGildedRoseAndUpdateQuality(item);
-        assertThat(item).hasQuality(11);
+        //Given
+        Item item = new AgedBrie(12, 8);
+        GildedRose gildedRose = new GildedRose(new Item[]{item});
+
+        //When
+        gildedRose.updateQuality();
+
+        //Then
+        assertThat(item).hasQuality(9);
     }
 
     @Test
-    public void backstagePassShouldIncreaseQualityAsDaysGoBy() {
-        Backstage item = new Backstage(20, 10);
-        GildedRose gildedRose = buildGildedRoseAndUpdateQuality(item);
-        assertThat(item).hasQuality(11);
-    }
+    public void sulfurasShouldNeverDecreaseQuality() {
+        //Given
+        Item item = new Sulfuras(12, 8);
+        GildedRose gildedRose = new GildedRose(new Item[]{item});
 
-    @Test
-    public void backstagePassShouldIncreaseQualityByTwoWhenSellInInferiorToTenDays() {
-        Backstage item = new Backstage(9, 10);
-        GildedRose gildedRose = buildGildedRoseAndUpdateQuality(item);
-        assertThat(item).hasQuality(12);
-    }
+        //When
+        gildedRose.updateQuality();
 
-    @Test
-    public void backstagePassShouldIncreaseQualityByThreeWhenSellInInferiorToFiveDays() {
-        Backstage item = new Backstage(4, 10);
-        GildedRose gildedRose = buildGildedRoseAndUpdateQuality(item);
-        assertThat(item).hasQuality(13);
-    }
-
-    @Test
-    public void backstagePassShouldHaveQualityZeroAfterSellIn() {
-        Backstage item = new Backstage(0, 10);
-        GildedRose gildedRose = buildGildedRoseAndUpdateQuality(item);
-        assertThat(item).hasQuality(0);
-    }
-
-    @Test
-    public void sulfurasShouldNeverChangeQuality() {
-        Sulfuras item = new Sulfuras(10, 10);
-        GildedRose gildedRose = buildGildedRoseAndUpdateQuality(item);
-        assertThat(item).hasQuality(10);
-    }
-
-    @Test
-    public void conjuredShouldDecreaseQualityByTwoAsDaysGoBy() {
-        Conjured item = new Conjured(10, 10);
-        GildedRose gildedRose = buildGildedRoseAndUpdateQuality(item);
+        //Then
         assertThat(item).hasQuality(8);
     }
 
     @Test
-    public void conjuredShouldDecreaseQualityByFourAsDaysGoByAfterSellIn() {
-        Conjured item = new Conjured(0, 10);
-        GildedRose gildedRose = buildGildedRoseAndUpdateQuality(item);
-        assertThat(item).hasQuality(6);
-    }
+    public void sulfurasShouldNotDecreaseSellIn() {
+        //Given
+        Item item = new Sulfuras(12, 8);
+        GildedRose gildedRose = new GildedRose(new Item[]{item});
 
-    /**
-     * SELL IN
-     */
-    @Test
-    public void sellInShouldDecreaseByOneAsDaysGoBy() {
-        Item item = anItem().withName("default").withQuality(10).withSellIn(10).build();
-        GildedRose gildedRose = buildGildedRoseAndUpdateQuality(item);
-        assertThat(item).hasSellIn(9);
+        //When
+        gildedRose.updateQuality();
+
+        //Then
+        assertThat(item).hasSellIn(12);
     }
 
     @Test
-    public void sulfurasSellInShouldNotDecrease() {
-        Sulfuras item = new Sulfuras(10, 10);
-        GildedRose gildedRose = buildGildedRoseAndUpdateQuality(item);
-        assertThat(item).hasSellIn(10);
+    public void backstagePassShouldIncreaseQualityAsDaysGoBy() {
+        //Given
+        Item item = new Backstage(12, 8);
+        GildedRose gildedRose = new GildedRose(new Item[]{item});
+
+        //When
+        gildedRose.updateQuality();
+
+        //Then
+        assertThat(item).hasQuality(9);
+    }
+
+    @Test
+    public void backstagePassShouldIncreaseQualityByTwoWhenSellInInferiorToTenDays() {
+        //Given
+        Item item = new Backstage(10, 8);
+        GildedRose gildedRose = new GildedRose(new Item[]{item});
+
+        //When
+        gildedRose.updateQuality();
+
+        //Then
+        assertThat(item).hasQuality(10);
+    }
+
+    @Test
+    public void backstagePassShouldIncreaseQualityByThreeWhenSellInInferiorToFiveDays() {
+        //Given
+        Item item = new Backstage(5, 8);
+        GildedRose gildedRose = new GildedRose(new Item[]{item});
+
+        //When
+        gildedRose.updateQuality();
+
+        //Then
+        assertThat(item).hasQuality(11);
+    }
+
+    @Test
+    public void backstagePassShouldHaveQualityZeroAfterSellIn() {
+        //Given
+        Item item = new Backstage(0, 8);
+        GildedRose gildedRose = new GildedRose(new Item[]{item});
+
+        //When
+        gildedRose.updateQuality();
+
+        //Then
+        assertThat(item).hasQuality(0);
     }
 }
