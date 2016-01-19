@@ -11,39 +11,38 @@
 
     <dependencies>
         <dependency>
-            <groupId>org.easytesting</groupId>
-            <artifactId>fest-assert-core</artifactId>
-            <version>2.0M10</version>
-            <scope>test</scope>
-        </dependency>
-
-        <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
             <version>4.12</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.assertj</groupId>
+            <artifactId>assertj-core</artifactId>
+            <version>3.3.0</version>
             <scope>test</scope>
         </dependency>
     </dependencies>
 
     <build>
         <plugins>
-            <!--plugin>
-                <groupId>org.easytesting</groupId>
-                <artifactId>maven-fest-assertion-generator-plugin</artifactId>
-                <version>1.0</version>
-                <executions>
-                    <execution>
-                        <goals>
-                            <goal>generate-assertions</goal>
-                        </goals>
-                    </execution>
-                </executions>
+            <!-- Generate assertions: mvn assertj:generate-assertions
+                (see: http://joel-costigliola.github.io/assertj/assertj-assertions-generator-maven-plugin.html) -->
+            <plugin>
+                <groupId>org.assertj</groupId>
+                <artifactId>assertj-assertions-generator-maven-plugin</artifactId>
+                <version>2.0.0</version>
                 <configuration>
                     <packages>
                         <param>org.codingdojo.gildedrose.model</param>
                     </packages>
+                    <targetDir>src/test/java/</targetDir>
+                    <generateBddAssertions>false</generateBddAssertions>
+                    <generateSoftAssertions>false</generateSoftAssertions>
+                    <generateJUnitSoftAssertions>false</generateJUnitSoftAssertions>
+                    <generateAssertions>false</generateAssertions>
                 </configuration>
-            </plugin-->
+            </plugin>
             <plugin>
                 <groupId>org.jacoco</groupId>
                 <artifactId>jacoco-maven-plugin</artifactId>
