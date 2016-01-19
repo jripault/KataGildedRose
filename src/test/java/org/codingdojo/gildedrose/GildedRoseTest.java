@@ -8,6 +8,7 @@ import org.junit.runners.JUnit4;
 import static org.codingdojo.gildedrose.builder.ItemBuilder.anItem;
 import static org.codingdojo.gildedrose.model.ItemAssert.assertThat;
 import static org.junit.Assert.fail;
+
 /**
  * run 'mvn clean package'
  * go to \target\site\jacoco\index.html to consult
