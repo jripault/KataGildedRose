@@ -5,36 +5,31 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
 
-import static org.codingdojo.gildedrose.model.ItemAssert.*;
-import static org.codingdojo.gildedrose.builder.ItemBuilder.anItem;
-
-import static org.fest.assertions.api.Assertions.*;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
 /**
- * run mvn clean package
+ * run 'mvn clean package'
  * go to \target\site\jacoco\index.html to consult
  */
-
 @RunWith(JUnit4.class)
 public class GildedRoseTest {
     @Test
     public void foo() {
-        Item[] items = new Item[] { new Item("+5 Dexterity Vest", 10, 20),
-            new Item("Aged Brie", 2, 0),
-            new Item("Elixir of the Mongoose", 5, 7),
-            new Item("Sulfuras, Hand of Ragnaros", 0, 40),
-            new Item("Sulfuras, Hand of Ragnaros", -1, 40),
-            new Item("Backstage passes to a TAFKAL80ETC concert", 15, 20),
-            new Item("Backstage passes to a TAFKAL80ETC concert", 10, 49),
-            new Item("Backstage passes to a TAFKAL80ETC concert", 5, 49),
-            // this conjured item does not work properly yet
-            new Item("Conjured Mana Cake", 3, 6) };
+        Item[] items = new Item[]{new Item("+5 Dexterity Vest", 10, 20),
+                new Item("Aged Brie", 2, 0),
+                new Item("Elixir of the Mongoose", 5, 7),
+                new Item("Sulfuras, Hand of Ragnaros", 0, 40),
+                new Item("Sulfuras, Hand of Ragnaros", -1, 40),
+                new Item("Backstage passes to a TAFKAL80ETC concert", 15, 20),
+                new Item("Backstage passes to a TAFKAL80ETC concert", 10, 49),
+                new Item("Backstage passes to a TAFKAL80ETC concert", 5, 49),
+                // this conjured item does not work properly yet
+                new Item("Conjured Mana Cake", 3, 6)};
 
         GildedRose app = new GildedRose(items);
-        int jours = 60;
-        for (int i = 0; i < jours; i++) {
+        int days = 60;
+        for (int i = 0; i < days; i++) {
             app.updateQuality();
             for (int j = 0; j < items.length; j++) {
                 assertTrue(items[0].quality >= 0);
@@ -54,7 +49,7 @@ public class GildedRoseTest {
 
     @Test
     public void bar() {
-        Item[] items = new Item[] { new Item("+5 Dexterity Vest", 1, 20)};
+        Item[] items = new Item[]{new Item("+5 Dexterity Vest", 1, 20)};
         GildedRose app = new GildedRose(items);
         app.updateQuality();
         app.updateQuality();
@@ -63,23 +58,9 @@ public class GildedRoseTest {
         assertEquals(15, items[0].quality);
     }
 
-
     @Test
     public void conjuredTest() {
-        Item[] items = new Item[] { new Item("Conjured Mana Cake", 1, 15)};
-        GildedRose app = new GildedRose(items);
-        app.updateQuality();
-        assertEquals(0, items[0].sellIn);
-        assertEquals(13, items[0].quality);
-        app.updateQuality();
-        assertEquals(9, items[0].quality);
-        app.updateQuality();
-        assertEquals(5, items[0].quality);
-    }
-
-    @Test
-    public void shouldUpdateConcert() {
-        Item[] items = new Item[] { new Item("Conjured Mana Cake", 1, 15)};
+        Item[] items = new Item[]{new Item("Conjured Mana Cake", 1, 15)};
         GildedRose app = new GildedRose(items);
         app.updateQuality();
         assertEquals(0, items[0].sellIn);
