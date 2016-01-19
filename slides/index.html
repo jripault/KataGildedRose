@@ -36,11 +36,11 @@
             padding-bottom: 10px;
         }
 
-        a{
-            text-decoration:underline;
+        a {
+            text-decoration: underline;
         }
 
-        .strike{
+        .strike {
             text-decoration: line-through;
             padding-left: 70px;
         }
@@ -49,11 +49,11 @@
             padding-left: 70px;
         }
 
-        img{
+        img {
             width: 25%;
         }
 
-        .img-centered{
+        .img-centered {
             width: 80%;
             display: block;
             margin-left: auto;
@@ -83,7 +83,7 @@
     <h1>Organisation</h1>
     <ul class="steps">
         <li>Pair Programming</li>
-        <li>TDD:
+        <li>TDD :
             <ul>
                 <li style="color: red">Red</li>
                 <li style="color: #008000">Green</li>
@@ -97,29 +97,27 @@
 </section>
 <section id="table-of-contents2">
     <h1>Planning du dojo</h1>
-            <ul>
-                <li>Une itération de tests (25min.)</li>
-                <li>Rétro. (10min.)</li>
-                <li>Itération Refactoring (25min.)</li>
-                <li>Rétro. (10min.)</li>
-                <li>Itération Refactoring (20min.)</li>
-                <li>Rétro. (10min.)</li>
-                <li>Itération Refactoring (10min.)</li>
-                <li>Rétro. & Conclusion (10min.)</li>
-            </ul>
+    <ul>
+        <li>Une itération de tests (30min.)</li>
+        <li>Rétro. (10min.)</li>
+        <li>Itération Refactoring (20min.)</li>
+        <li>Rétro. (10min.)</li>
+        <li>Itération Refactoring (30min.)</li>
+        <li>Rétro. & Conclusion (10min.)</li>
+    </ul>
 </section>
 <section id="installation">
     <h1><i class="icon-download"></i> Installation</h1>
     <ul>
-        <li>Environnement : Ton Eclipse ...</li>
-        <li><a href="https://github.com/jripault/KataGildedRose">Code</a></li>
-        <li><a href="http://agile-spirit.fr/blog/tester-en-toute-productivite/">Tests</a>
+        <li>Environnement : Ton Eclipse ou pour changer <a href="https://www.jetbrains.com/idea/">IntelliJ</a></li>
+        <li><a href="https://github.com/jripault/KataGildedRose">Le Code</a></li>
+        <li>Pour les tests :</a>
             <ul>
-                <li>JUnit</li>
-                <li><a href="http://joel-costigliola.github.io/assertj/">AssertJ</a></li>
-                <li><a href="http://www.eclemma.org/">Eclemma</a></li>
-                <li><a href="http://infinitest.github.io/">InfiniTest</a></li>
-                <li><a href="http://moreunit.sourceforge.net/">MoreUnit</a></li>
+                <li><a href="http://junit.org/">Junit</a></li>
+                <li><a href="http://joel-costigliola.github.io/assertj/">AssertJ</a> (librairie d'assertions, fork de FestAssert)</li>
+                <li><a href="http://www.eclemma.org/">Eclemma</a> (plugin couverture de code sous Eclipse)</li>
+                <li><a href="http://infinitest.github.io/">InfiniTest</a> (plugin IntelliJ/Eclipse pour lancer les tests unitaires automatiquement à chaque changement)</li>
+                <li><a href="http://moreunit.sourceforge.net/">MoreUnit</a> (plugin Intellij/Eclipse pour améliorer l'intégration de ses tests unitaires dans l'IDE)</li>
             </ul>
         </li>
     </ul>
@@ -140,7 +138,7 @@
         <li>Quand la date de péremption est passée, la qualité se degrade deux fois plus vite</li>
         <li>La qualité d'un item ne peut pas être négative</li>
         <li>La qualité d'un item ne peut pas dépasser 50</li>
-        <li>Pour le "Aged Brie": Contrairement aux autres items, plus le temps passe plus sa qualité augmente</li>
+        <li>Pour le "Aged Brie" : Contrairement aux autres items, plus le temps passe plus sa qualité augmente</li>
         <li>"Sulfuras" étant un item légendaire, n'a pas de date de péremption et ne perd pas en qualité</li>
     </ul>
 </section>
@@ -151,7 +149,7 @@
             Ainsi qualité augmente de 2 quand il reste 10 jours ou moins, et augmente de 3 quand il reste 5 jours ou moins. Par
             contre elle tombe à 0 quand la date est passée.<br/>
         </li>
-        <li><strong>Demande d'évolution:</strong><br/>Vous venez de trouver un nouveau fournisseur d'item maudits: il fournit les mêmes items mais ils se dégradent deux fois plus vite.
+        <li><strong>Demande d'évolution :</strong><br/>Vous venez de trouver un nouveau fournisseur d'item maudits: il fournit les mêmes items mais ils se dégradent deux fois plus vite.
             Il faut donc mettre à jour le système pour prendre cela en compte.
         </li>
     </ul>
@@ -173,10 +171,10 @@
     </ul>
 </section>
 <section id="iteration1">
-    <h1>A vos marques, Prêts ? Testez !</h1>
+    <h1>A vos marques, Prêts ? Testez ! (30 min)</h1>
 </section>
 <section id="Retro1">
-    <h1>Retrospective</h1>
+    <h1>Rétro (10 min)</h1>
     <ul class="steps">
         <li>Difficultés rencontrées</li>
         <li>Couverture</li>
@@ -184,10 +182,10 @@
     </ul>
 </section>
 <section id="iteration2">
-    <h1>A vos marques, Prêts ? Refactorez !</h1>
+    <h1>A vos marques, Prêts ? Refactorez ! (20 min)</h1>
 </section>
 <section id="refactor-hints">
-    <h1>Refactor hints</h1>
+    <h1>Refactor hints (10 minutes)</h1>
     <ul class="steps">
         <li>Dupliquer le code pour mieux refactorer: débusquer la duplication</li>
         <li>Apprenez à utiliser votre IDE</li>
@@ -195,22 +193,19 @@
     </ul>
 </section>
 <section id="iteration3">
-    <h1>Et ca refactore encore</h1>
-</section>
-<section id="iteration4">
-    <h1>Un dernier pour la route</h1>
+    <h1>Et ca refactore encore (30 min)</h1>
 </section>
 <section id="retroExo">
-    <h1>Retro de l'exercice</h1>
+    <h1>Rétro de l'exercice (10 min)</h1>
     <ul class="steps">
-        <li>Tour de table: avancement, solutions, difficultés, ressenti</li>
-        <li>1 exercice: 5 solutions différentes</li><!-- différentes approches, jusqu'ou va-ton dans le refactor -->
+        <li>Tour de table : avancement, solutions, difficultés, ressenti</li>
+        <li>1 exercice : 5 solutions différentes</li><!-- différentes approches, jusqu'ou va-ton dans le refactor -->
         <li>Pair programming ?</li>
         <li>Toujours peur du legacy ?</li>
     </ul>
 </section>
 <section id="retroDojo">
-    <h1>Retro du dojo</h1>
+    <h1>Rétro du dojo</h1>
     <ul class="steps">
         <li>What went well ?</li>
         <li>What could be improved ?</li>
