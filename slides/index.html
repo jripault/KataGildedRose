@@ -13,7 +13,7 @@
 
 <body>
 <section id="coding-dojo" class="coding-dojo title">
-    <h1><img class="img-centered" src="img/codingDojo.png"></h1>
+    <h1><img class="img-centered" src="images/codingDojo.png"></h1>
 </section>
 
 <section id="intro" class="coding-dojo">
@@ -25,10 +25,12 @@
         <li>Pour quoi faire ?</li>
         <!-- l'objectif premier est d'apprendre et non pas de terminer l'excercice -->
         <li class="strike">Terminer l'exercice</li>
-        <li class="subSection">APPRENDRE !</li>
+        <li class="strike">Compétition</li>
+        <li class="subSection">S'améliorer en développement</li>
+        <li class="subSection"><strong>APPRENDRE !</strong></li>
         <li>Terrain d'entrainement</li>
         <!-- Safe (no prod), error is ok, favoriser l'échange -->
-        <li class="strike">Code de prod</li>
+        <li class="strike">Pression</li>
         <li class="subSection">Error is ok</li>
     </ul>
 </section>
@@ -49,7 +51,7 @@
     </ul>
 </section>
 <section id="planning" class="coding-dojo">
-    <h1>Planning du dojo</h1>
+    <h1><i class="fa fa-clock-o"></i> Planning du dojo</h1>
     <ul>
         <li>Une itération de tests (25min.)</li>
         <li>Rétro. (10min.)</li>
@@ -64,19 +66,22 @@
 <section id="installation" class="coding-dojo">
     <h1><i class="fa fa-download"></i> Installation</h1>
     <ul>
-        <li>Environnement : Ton Eclipse ou pour changer <a href="https://www.jetbrains.com/idea/">IntelliJ</a></li>
+        <li>Environnement : Eclipse ou pour changer <a href="https://www.jetbrains.com/idea/">IntelliJ</a></li>
         <li><a href="https://github.com/jripault/KataGildedRose">Le Code</a></li>
         <li>Pour les tests :
             <ul>
                 <li><a href="http://junit.org/">Junit</a></li>
-                <li><a href="http://joel-costigliola.github.io/assertj/">AssertJ</a> (librairie d'assertions, fork de
+                <li>
+                    <a href="http://joel-costigliola.github.io/assertj/">AssertJ</a> (librairie d'assertions, fork de
                     FestAssert)
                 </li>
                 <li><a href="http://www.eclemma.org/">Eclemma</a> (plugin couverture de code sous Eclipse)</li>
-                <li><a href="http://infinitest.github.io/">InfiniTest</a> (plugin IntelliJ/Eclipse pour lancer les tests
+                <li>
+                    <a href="http://infinitest.github.io/">InfiniTest</a> (plugin IntelliJ/Eclipse pour lancer les tests
                     unitaires automatiquement à chaque changement)
                 </li>
-                <li><a href="http://moreunit.sourceforge.net/">MoreUnit</a> (plugin IntelliJ/Eclipse pour améliorer
+                <li>
+                    <a href="http://moreunit.sourceforge.net/">MoreUnit</a> (plugin IntelliJ/Eclipse pour améliorer
                     l'intégration de ses tests unitaires dans l'IDE)
                 </li>
             </ul>
@@ -89,19 +94,24 @@
     <ul class="steps">
         <li>
             <blockquote>Whatever luck I had, I made. I was never a natural athlete, but I paid my dues in sweat and
-             concentration and took the time necessary to learn Karate and become World Champion.
+                concentration and took the time necessary to learn Karate and become World Champion.
             </blockquote>
         </li>
-       <li>
-           <small>Chuck Norris (American martial artist and actor. Also, the only man who has counted to infinity. <strong>Twice.</strong>)</small>
-       </li>
+        <li>
+            <small>Chuck Norris (American martial artist and actor. Also, the only man who has counted to infinity.
+                <strong>Twice.</strong>)
+            </small>
+        </li>
     </ul>
 </section>
 <section id="rules" class="kata">
     <h1><i class="fa fa-check"></i>Les règles du Kata</h1>
     <h4>Vous tenez un magasin d'items :</h4>
     <ul class="items">
-        <li>Tous les items ont une date de péremption (sellIn) qui défini le nombre de jours restants pour vendre l'objet.</li>
+        <li>
+            Tous les items ont une date de péremption (sellIn) qui défini le nombre de jours restants pour vendre
+            l'objet.
+        </li>
         <li>Chaque item a une valeur de qualité qui indique son prix.</li>
         <li>A la fin de chaque jour, le système doit baisser ces deux valeurs.</li>
     </ul>
@@ -119,12 +129,14 @@
 <section id="more-rules2" class="kata">
     <h1>Encore des règles...</h1>
     <ul class="steps">
-        <li>"Backstage passes", comme "aged brie", augmente en qualité quand sa valeur de péremption approche;
+        <li>
+            "Backstage passes", comme "aged brie", augmente en qualité quand sa valeur de péremption approche;
             Ainsi qualité augmente de 2 quand il reste 10 jours ou moins, et augmente de 3 quand il reste 5 jours ou
             moins. Par contre elle tombe à 0 quand la date est passée.<br/>
         </li>
-        <li><br/><strong>Demande d'évolution :</strong><br/>Vous venez de trouver un nouveau fournisseur d'item maudits :
-            il fournit les mêmes items mais ils se dégradent deux fois plus vite. Il faut donc mettre à jour le système
+        <li>
+            <strong>Demande d'évolution :</strong><br/>Vous venez de trouver un nouveau fournisseur d'item maudits :
+            Il fournit les mêmes items mais ils se dégradent deux fois plus vite. Il faut donc mettre à jour le système
             pour prendre cela en compte.
         </li>
     </ul>
@@ -133,7 +145,9 @@
     <h1>Règles sur le code</h1>
     <ul>
         <li style="color: red"><strong>Pas le droit de toucher à la classe Item</strong></li>
-        <li>Uniquement refactorer la méthode <strong>updateQuality</strong> de la classe <strong>GildedRose</strong></li>
+        <li>
+            Uniquement refactorer la méthode <strong>updateQuality</strong> de la classe <strong>GildedRose</strong>
+        </li>
         <li>Tout le reste est autorisé, soyez imaginatif</li>
     </ul>
 </section>
@@ -142,7 +156,7 @@
     <ul class="steps">
         <li>Implémenter les tests</li>
         <li>Les tests c'est pour ceux qui ne savent pas coder</li>
-        <li><img class="img-centered" src="img/testing.gif"></li>
+        <li><img class="img-centered" src="images/testing.gif"></li>
     </ul>
 </section>
 
@@ -160,8 +174,8 @@
 <section id="iteration2" class="iteration title">
     <h1>A vos marques, prêts ? Refactorez ! (20 min)</h1>
 </section>
-<section id="refactor-hints" class="iteration">
-    <h1>Refactor hints</h1>
+<section id="refactor-tips" class="iteration">
+    <h1>Refactor tips</h1>
     <ul class="steps">
         <li>Dupliquer le code pour mieux refactorer : débusquer la duplication</li>
         <li>Apprenez à utiliser votre IDE</li>
@@ -175,16 +189,17 @@
     <h1>Un dernier pour la route (10 min)</h1>
 </section>
 <section id="retro3" class="iteration">
-    <h1>Rétro du kata (10 min)</h1>
+    <h1>Rétro du Kata (10 min)</h1>
     <ul class="steps">
         <li>Tour de table : avancement, solutions, difficultés, ressenti</li>
-        <li><strong>1</strong> exercice : <strong>5</strong> solutions différentes</li><!-- différentes approches, jusqu'ou va-ton dans le refactor -->
+        <li><strong>1</strong> exercice : <strong>5</strong> solutions différentes</li>
+        <!-- différentes approches, jusqu'ou va-ton dans le refactor -->
         <li>Pair programming ?</li>
         <li>Toujours peur du legacy ?</li>
     </ul>
 </section>
 <section id="retro4" class="iteration">
-    <h1>Rétro du dojo (10 min)</h1>
+    <h1>Rétro du Dojo (10 min)</h1>
     <ul class="steps">
         <li>What went well ?</li>
         <li>What could be improved ?</li>
@@ -195,10 +210,14 @@
 
 <section id="references" class="coding-dojo">
     <h1><i class="fa fa-book"></i> Références</h1>
-    <a href="http://www.amazon.fr/Test-Driven-Development-By-Example/dp/0321146530"><img src="img/testDrivenDevelopmentByExample.jpg"/></a>
-    <a href="http://www.amazon.fr/Clean-Code-Handbook-Software-Craftsmanship/dp/0132350882"><img src="img/cleanCode.jpg"/></a>
-    <a href="http://www.amazon.fr/Effective-Java-Joshua-Bloch/dp/0321356683"><img src="img/refactoringImprovingDesignExistingCode.jpg"/></a>
-    <a href="http://www.amazon.fr/Refactoring-Improving-Design-Existing-Code/dp/0201485672"><img src="img/effectiveJava.jpeg"/></a>
+    <a href="http://www.amazon.fr/Test-Driven-Development-By-Example/dp/0321146530"><img
+            src="images/testDrivenDevelopmentByExample.jpg"/></a>
+    <a href="http://www.amazon.fr/Clean-Code-Handbook-Software-Craftsmanship/dp/0132350882"><img
+            src="images/cleanCode.jpg"/></a>
+    <a href="http://www.amazon.fr/Effective-Java-Joshua-Bloch/dp/0321356683"><img
+            src="images/refactoringImprovingDesignExistingCode.jpg"/></a>
+    <a href="http://www.amazon.fr/Refactoring-Improving-Design-Existing-Code/dp/0201485672"><img
+            src="images/effectiveJava.jpeg"/></a>
 </section>
 
 <script src="components/jquery/jquery.min.js"></script>

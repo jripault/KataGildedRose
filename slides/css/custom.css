@@ -25,7 +25,7 @@ li {
 }
 
 ul .items {
-    list-style: circle;
+    list-style: disc inside;
 }
 
 a {
